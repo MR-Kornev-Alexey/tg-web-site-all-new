@@ -1,10 +1,6 @@
 import * as React from 'react';
-import {styled} from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
 import "./SecondScreen.css"
-import rb from "../../img/right-bottom.svg"
 import {Box} from "@mui/system";
 import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
