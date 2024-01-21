@@ -95,10 +95,19 @@ const CountdownTimer = () => {
                 component="h3"
                 variant="h3"
                 align="center"
+                className={"top-mainSubTitle"}
+            >
+                29 января 2024 года
+            </Typography>
+            <Typography
+                component="h3"
+                variant="h3"
+                align="center"
                 className={"line-block"}
             >
                 До старта курса осталось:
             </Typography>
+
             <Box className={"box-timer"} sx={{display: {md: "flex", sm: "flex", xs: "none"}}}>
                 <Box className={"box-timer-in"}>
                     <h3 className={"h3-timer"}>{timeLeft.days}</h3>
