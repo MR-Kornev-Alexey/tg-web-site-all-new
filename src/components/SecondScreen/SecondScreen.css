@@ -1,0 +1,35 @@
+.card-description {
+    font-size: 12px;
+}
+
+
+.cardImage {
+    height: 100%;
+    display: flex!important;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.cardTitleTwo {
+    color: #444444;
+    font-weight: 500;
+    font-size: 18px!important;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    padding: 0 12px 0 24px;
+
+}
+
+@media screen and (max-width: 820px) {
+    .cardPaper {
+        max-width: 96%;
+    }
+    .cardImage {
+        width: 120px;
+        height: 120px;
+    }
+}
+@media screen and (max-width: 540px) {
+
+}
+

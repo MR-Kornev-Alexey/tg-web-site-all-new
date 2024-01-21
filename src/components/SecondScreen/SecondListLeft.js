@@ -6,86 +6,117 @@ import Typography from '@mui/material/Typography';
 import "./SecondScreen.css"
 import rb from "../../img/right-bottom.svg"
 import {Box} from "@mui/system";
+import Link from "@mui/material/Link";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import ImageMom from "../../img/mom-1.png";
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
-
-const Img = styled('img')({
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '90%',
-    maxHeight: '90%',
-});
-const cardsOfHW = [
+const cardsOfHW1 = [
     {
         id: 0,
-        title: "Регулярно истерит и бурно реагирует на любые раздражители"
+        title: "Беспомощны при эмоциональных взрывах и потеряли контроль над своей жизнью"
     },
     {
         id: 1,
-        title: "Ноет при отключении от мультиков и/или при изъятии планшета и телефона"
+        title: "С ужасом ожидаете очередную истерику"
+    },
+    {
+        id: 1,
+        title: "Опасаетесь, что ребенок может пострадать как физически, так и психологически",
+    }
+]
+const cardsOfHW2 = [
+    {
+        id: 0,
+        title: "В шоке от неуправляемой агрессии вашей крохи"
     },
     {
         id: 2,
-        title: "Агрессивно ведет себя с детьми и домашними животными",
+        title: "Избегаете общественные места из-за страха неловкости  и чувства вины как \"плохой матери\"."
     },
     {
-        id: 3,
-        title: "Бъется головой об стену, швыряет игрушки, кусается, щипается и Вы не знаете что с этим делать"
-    },
-    {
-        id: 4,
-        title: "Не слушается, а слова \"Нет\" и \"Нельзя\' не работают"
-    },
-    {
-        id: 5,
-        title: "Проявляет агрессию, постоянно ноет, не идет на компромисс, требует невозможного",
+        id: 2,
+        title: "Испытываете вину за поведение ребенка и свои срывы",
     }
 ]
-export default function ComplexGrid() {
+const cardsOfHW3 = [
+    {
+        id: 0,
+        title: "потеряли контроль над своей жизнью ",
+    }
+]
+export default function SecondListLeft() {
     return (
-        <div>
-            {cardsOfHW.map((element, index)  => {
-                    return (
-                         <Paper
-                            sx={{
-                                p: 2,
-                                margin: 'auto',
-                                flexGrow: 1,
-                                color: '#25384b',
-                                position: 'relative',
-                                marginBottom: index < cardsOfHW.length - 1 ? 2 : 0, // Add margin-bottom except for the last card
-                            }}
-                            key={element.id}
-                            className={'cardPaper'}
-                        >
-                             <Grid container spacing={2} sx={{ flexWrap: 'wrap' }}>
+        <Container component="third">
+            <Grid container>
+                <Grid item md={2} sm={12} xs={12} sx={{
+                    display: "flex",
+                    justifyContent: {md: 'center', sm: 'center', xs: 'center'},
+                    alignItems: "center",
+                    marginTop: {md: 0, sm: 3, xs: 3}
+                }}>
+                    <Box
+                        component="img"
+                        src={ImageMom}
+                        alt="Главная картинка"
+                        sx={{
+                            width: '100%',
+                            maxWidth: 390,
+                            marginBottom: {md: 0, sm: 2, xs:2 }
+                        }}
+                    />
+                </Grid>
+                <Grid item md={10} sm={12} xs={12} container sx={{padding: 2}}>
+                    <Grid item md={6} sm={12} xs={12}>
+                        {cardsOfHW1.map((element, index) => {
+                                return (
+                                    <Box
+                                        key={element.id}
+                                    >
+                                        <Grid container className={"titleBlockMom size-common"}>
+                                            <Grid item md={2} sm={1} xs={1}  display={"flex"} justifyContent={"center"} alignItems={"center"} >
+                                                <CheckBoxIcon color={"primary"} fontSize={"large"}/>
+                                            </Grid>
+                                            <Grid item md={10} sm={11} xs={11} className={"padding-mom-left padding-mom-right"}  display={"flex"} justifyContent={"flex-start"} alignItems={"center"} >
+                                                {element.title}
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                )
+                            }
+                        )
+                        }
+                    </Grid>
+                    <Grid item md={6} sm={12} xs={12}>
+                        {cardsOfHW2.map((element, index) => {
+                                return (
+                                    <Box
+                                        key={element.id}
+                                    >
+                                        <Grid container className={"titleBlockMom size-common"}>
+                                            <Grid item md={2} sm={1} xs={1}  display={"flex"} justifyContent={"center"} alignItems={"center"} >
+                                                <CheckBoxIcon color={"primary"} fontSize={"large"}/>
+                                            </Grid>
+                                            <Grid item md={10} sm={11} xs={11} className={"padding-mom-left padding-mom-right"}  display={"flex"} justifyContent={"flex-start"} alignItems={"center"} >
+                                                {element.title}
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                )
+                            }
+                        )
+                        }
+                    </Grid>
 
-                                 <Grid item xs={9} sm container sx={{ height: 80,  justifyContent: 'center', alignItems: 'center', marginBottom: 2 }}>
-                                     <Grid item sm>
-                                         <Typography gutterBottom component="div" className={'mainSubTitle'} sx={{textAlign: "left"}}>
-                                             {element.title}
-                                         </Typography>
-                                     </Grid>
-                                 </Grid>
+                </Grid>
+            </Grid>
 
-                             </Grid>
-                             <Box
-                                 component="img"
-                                 src={rb}
-                                 alt="Главная картинка"
-                                 sx={{
-                                     width: '100%',
-                                     maxWidth: 60,
-                                     position: "absolute",
-                                     bottom:0,
-                                     right:0
-                                 }}
-                             />
-                        </Paper>
-                    )
-
-                }
-            )
-            }
-        </div>
+            <Link href={'#price'} sx={{display: "flex", justifyContent: 'center', marginTop: 2}}>
+                <Button variant="contained" className="btn-pay" sx={{margin: '4 auto 0 auto'}}>
+                    Купить
+                </Button>
+            </Link>
+        </Container>
     );
 }

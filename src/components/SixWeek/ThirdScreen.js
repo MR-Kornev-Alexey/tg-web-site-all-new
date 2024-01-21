@@ -8,11 +8,11 @@ import Typography from "../Typography/Typography";
 import Button from "@mui/material/Button";
 import ImageLeft from "../../img/image-new-2.png";
 import ImageCentral from "../../img/image-new-3.png";
-import CardThird from "./CardThird";
+import CardThird from "../ThirdScreen/CardThird";
 import Icon from '@mdi/react';
 import { mdiBaby, mdiClockTimeEightOutline, mdiBabyFaceOutline, mdiTeddyBear, mdiHandClap, mdiTabletDashboard } from '@mdi/js';
 import ThirdCardNew from "./ThirdCardNew";
-import ThirdCard from "./CardThird";
+import ThirdCard from "../ThirdScreen/CardThird";
 
 
 

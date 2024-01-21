@@ -1,0 +1,34 @@
+.successTitle {
+
+    text-align: left;
+    padding: 4px 2px;
+}
+.font-17{
+    font-size: 17px!important;
+}
+.successStep {
+    font-size: 42px;
+    text-align: center;
+    margin: auto;
+}
+.btn-telegram {
+    display: flex; /* Применяется flex-контейнер для выравнивания элементов */
+    align-items: center; /* Выравнивание по вертикали по центру */
+    justify-content: center; /* Выравнивание по горизонтали по центру */
+    width: 200px;
+    height: 40px;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+/* Стили для иконки (при необходимости) */
+.btn-telegram svg {
+    margin-right: 5px; /* Расстояние между иконкой и текстом кнопки */
+}
+
+@media screen and (max-width: 540px) {
+    .font-17{
+        font-size: 15px!important;
+    }
+}

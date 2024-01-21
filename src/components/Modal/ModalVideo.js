@@ -16,6 +16,7 @@ function ModalVideo({ isOpen, closeModal, videoLink }) {
             width: '96%', // Установите ширину по вашему желанию
             margin: 'auto',
             backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            zIndex: 56
         },
     };
     return (

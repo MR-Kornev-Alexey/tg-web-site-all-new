@@ -5,13 +5,15 @@ import './Header.css';
 
 const Header = () => {
     const {user, onClose} = useTelegram();
-
     return (
         <div className={'header'}>
             <Button onClick={onClose}>Закрыть</Button>
-            <span className={'username'}>
-                {user?.username}
-            </span>
+            <div className={'title'}>
+               Вебинары по развитию
+            </div>
+            <div >
+               Id: {user?.id}
+            </div>
         </div>
     );
 };

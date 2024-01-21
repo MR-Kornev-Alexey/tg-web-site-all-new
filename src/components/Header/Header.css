@@ -1,11 +1,17 @@
 .header {
     width: 100%;
-    height: 50px;
+    height: 60px;
     display: flex;
-    align-items: center;
+    justify-content: space-between; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
     padding: 0 20px;
+    background-color: #4464A3;
+    color: aliceblue;
+    font-size: 12px;
 }
 
-.username {
-    margin-left: auto;
+.title {
+    text-transform: uppercase;
+    margin-left: 12px ;
+    font-size: 12px;
 }

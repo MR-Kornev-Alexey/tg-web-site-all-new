@@ -3,6 +3,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
+import axios from 'axios';
 
 const products = [
     {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
@@ -23,8 +24,9 @@ const getTotalPrice = (items = []) => {
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId} = useTelegram();
-
+    const [responseData, setResponseData] = useState(null);
+    const {tg, user, queryId} = useTelegram();
+    const [data, setData] = useState([]);
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
@@ -41,6 +43,22 @@ const ProductList = () => {
     }, [addedItems])
 
     useEffect(() => {
+        // URL для запроса на бэкенд
+
+        const backendUrl = process.env.NODE_ENV === 'production'
+            ? 'https://prod-backend.com/dataUser'
+            : 'http://localhost:5000/dataUser'; // URL для разработки
+        const dataToAPI = { chatId: 1081994928}
+        const handleSubmit = async () => {
+            try {
+                // Отправка POST-запроса с данными на бэкенд
+                const response = await axios.post(backendUrl, dataToAPI);
+                await setResponseData(response.data);
+            } catch (error) {
+                console.error('Ошибка при запросе на бэкенд:', error);
+            }
+        };
+        handleSubmit()
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
@@ -70,14 +88,21 @@ const ProductList = () => {
     }
 
     return (
-        <div className={'list'}>
-            {products.map(item => (
-                <ProductItem
-                    product={item}
-                    onAdd={onAdd}
-                    className={'item'}
-                />
-            ))}
+        <div>
+            <div>
+                <h1>Data:</h1>
+                <pre>{JSON.stringify(responseData, null, 2)}</pre>
+                <pre>{responseData.real_name_telegram}</pre>
+            </div>
+            <div className={'list'}>
+                {products.map(item => (
+                    <ProductItem
+                        product={item}
+                        onAdd={onAdd}
+                        className={'item'}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

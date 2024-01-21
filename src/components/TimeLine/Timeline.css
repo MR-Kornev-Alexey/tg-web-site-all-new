@@ -15,7 +15,7 @@
 .timeline-button {
     margin-top: 6px;
     width: 260px;
-    border-radius: 12px;
+    color: #444444;
 }
 
 .timeline-content-title {
@@ -24,6 +24,7 @@
 }
 
 @media screen and (max-width: 600px) {
+
     .timeline-content-title {
         font-size: 17px !important;
         padding: 6px;
