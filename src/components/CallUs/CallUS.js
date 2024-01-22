@@ -26,10 +26,10 @@ export default function CallUS({title}) {
                                 maxWidth:70
                             }}
                         />
-                        <Box className={"top-mainSubTitle"} sx={{marginLeft:2}}>Куратор Анастасия</Box>
+                        <Box className={"top-mainSubTitle"} sx={{marginLeft:2}}>Поддержка</Box>
                     </Grid>
                     <Grid item md={6} sm={11} xs={11}  display={'flex'} justifyContent={"center"} alignItems={"center"}>
-                        <Link href={"https://t.me/curator_courses"}  target={"_blank"} className={"btn-call"}  sx={{ display: "flex", justifyContent: 'center', alignItems: "flex-end", marginTop: {md: 0, sm: 3, xs: 3}}}>
+                        <Link href={"https://t.me/mrk_service"}  target={"_blank"} className={"btn-call"}  sx={{ display: "flex", justifyContent: 'center', alignItems: "flex-end", marginTop: {md: 0, sm: 3, xs: 3}}}>
                             <TelegramIcon />  <Box className={"top-mainSubTitle"} sx={{marginLeft:2}}>Связаться</Box>
                         </Link>
 

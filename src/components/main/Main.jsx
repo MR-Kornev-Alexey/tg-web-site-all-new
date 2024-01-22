@@ -18,9 +18,71 @@ import WhatCourse from "../WhatCourse/WhatCourse";
 import CountdownTimer from "../CountdownTimer/CountdownTimer";
 import {Box} from "@mui/system";
 
-
+const images = [
+    {
+        label: 'Надежда',
+        imgPath: require("../Sliders/outMain/Image03.jpg")
+    },
+    {
+        label: 'Ксения П.',
+        imgPath: require("../Sliders/outMain/Image01.jpg")
+    },
+    {
+        label: 'Nastya',
+        imgPath: require("../Sliders/outMain/Image05.jpg")
+    },
+    {
+        label: 'Лейсан',
+        imgPath: require("../Sliders/outMain/Image09.jpg")
+    },
+    {
+        label: 'Анастасия',
+        imgPath: require("../Sliders/outMain/Image12.jpg")
+    },
+    {
+        label: 'Smex',
+        imgPath: require("../Sliders/outMain/Image16.jpg")
+    },
+    {
+        label: 'Alenka',
+        imgPath: require("../Sliders/outMain/Image17.jpg")
+    },
+    {
+        label: 'Александра Ф.',
+        imgPath: require("../Sliders/outMain/Image18.jpg")
+    },
+    {
+        label: 'Дарья',
+        imgPath: require("../Sliders/outMain/Image22.jpg")
+    },
+    {
+        label: 'Мария',
+        imgPath: require("../Sliders/outMain/Image25.jpg")
+    },
+    {
+        label: 'Ani M.',
+        imgPath: require("../Sliders/outMain/Image29.jpg")
+    },
+    {
+        label: 'Дарья',
+        imgPath: require("../Sliders/outMain/Image32.jpg")
+    },
+    {
+        label: 'Асель',
+        imgPath: require("../Sliders/outMain/Image33.jpg")
+    },
+    {
+        label: 'Наталья',
+        imgPath: require("../Sliders/outMain/Image36.jpg")
+    },
+    {
+        label: 'Марина П.',
+        imgPath: require("../Sliders/outMain/Image41.jpg")
+    }
+];
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import CallUS from "../CallUs/CallUS";
+import Footer from "../Footer/Footer";
 
 
 const ScrollToTopButton = () => {
@@ -66,26 +128,29 @@ const ScrollToTopButton = () => {
 export default function Main() {
     return (
             <Box >
+                {/*<Author/>*/}
                 <FirstScreen />
-                <CountdownTimer />
-                <LineBlock title={"Курс для Вас, если малыш:"}/>
-                 <ListHW />
-                <LineBlock title={"И если Вы:"}/>
-                <SecondListLeft />
-                <LineBlock title={"За 6 недель работы Вы:"}/>
+                {/*<CountdownTimer />*/}
+                <LineBlock title={"Могу вам помочь"}/>
+                 <TimeLine />
+                 {/*<ListHW />*/}
+                {/*<LineBlock title={"И если Вы:"}/>*/}
+                {/*<SecondListLeft />*/}
+                <LineBlock title={"Консультация"}/>
                 <SixWeek/>
-                <LineBlock title={"Как работаем ?"}/>
-                <HowWork />
+                {/*<LineBlock title={"Как работаем ?"}/>*/}
+                {/*<HowWork />*/}
                 <LineBlock title={"Остались вопросы?"}/>
                 <CallUS />
                 <LineBlock title={"Отзывы"}/>
-                <Slider />
-                <LineBlock title={"Программа курса"}/>
-                <TimeLine />
-                <LineBlock title={"Елена Корнева"}/>
-                <Author/>
-                <LineBlock title={"Тарифы"}/>
-                <Price />
+                <Slider imagesFrom={images}/>
+                {/*<LineBlock title={"Программа курса"}/>*/}
+
+                {/*<LineBlock title={"Елена Корнева"}/>*/}
+
+                {/*<LineBlock title={"Тарифы"}/>*/}
+                {/*<Price />*/}
+                <Footer />
                 <ScrollToTopButton />
             </Box>
         );

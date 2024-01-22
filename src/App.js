@@ -1,20 +1,23 @@
 import './App.css';
+import * as React from 'react';
 import {useEffect} from "react";
-import {useTelegram} from "./hooks/useTelegram";
 import {Route, Routes} from 'react-router-dom'
 import Main from "./components/main/Main"
 import Privacy from "./components/Legal/Privacy";
 import Terms from "./components/Legal/Terms";
 import Success from "./components/BackPayment/Success";
 import Failed from "./components/BackPayment/Failed";
+import {StyledEngineProvider} from "@mui/material";
+import DrawerLeft from "./components/Drawer/anotherDrawer"
 
 function App() {
-    const {onToggleButton, tg} = useTelegram();
-    useEffect(() => {
-        tg.ready();
-    }, [])
     return (
         <div className="App">
+            <React.StrictMode>
+                <StyledEngineProvider injectFirst>
+                    <DrawerLeft/>
+                </StyledEngineProvider>
+            </React.StrictMode>
             <Routes>
                 <Route index element={<Main />}/>
                 <Route path={'privacy'} element={<Privacy />}/>

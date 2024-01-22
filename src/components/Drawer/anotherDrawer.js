@@ -16,27 +16,19 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import {useNavigate} from 'react-router-dom';
 import Icon from "@mdi/react";
 import {
-    mdiAccountChild,
-    mdiLogoutVariant,
     mdiMessageCogOutline,
-    mdiFolderPlus,
-    mdiCartOutline,
-    mdiStarFourPoints,
-    mdiMultimedia,
+    mdiHomeOutline,
     mdiLaptopAccount,
-    mdiApplication,
+    mdiAccountMultiple,
+    mdiListBoxOutline,
     mdiNoteMultipleOutline,
     mdiFileDocumentCheckOutline,
     mdiHumanBabyChangingTable
 } from "@mdi/js";
-import {useTelegram} from "../../hooks/useTelegram";
-import {useDispatch, useSelector} from "react-redux";
-import axios from "axios";
+
 import "./Drawer.css"
-import {setDataFromApi} from "../Redux/actions";
 import {Link} from "@mui/material";
 
 const drawerWidth = 240;
@@ -85,25 +77,13 @@ const DrawerHeader = styled('div')(({theme}) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
 }));
-const {user, userId , onClose } = useTelegram();
-export default function PersistentDrawerLeft() {
+
+
+export default function DrawerLeft() {
 
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
-    const [responseData, setResponseData] = useState(null);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const title = useSelector((state) => state.mainTitle);
-    const dataUser = useSelector((state) => state.userData);
-    const support = [
-        {
-            id: 1,
-            title: "Выход",
-            icon: <Icon path={mdiLogoutVariant} size={1}/>,
-            command: onClose
-        }
-    ]
     const supportSupport = [
         {
             id: 0,
@@ -127,90 +107,40 @@ export default function PersistentDrawerLeft() {
     const supportMain = [
         {
             id: 0,
-            title: "Личный кабинет",
-            icon: <Icon path={mdiAccountChild} size={1}/>,
+            title: "Главная",
+            icon: <Icon path={mdiHomeOutline} size={1}/>,
             link: "/",
             checkStar: false
         },
         {
             id: 1,
-            title: "Курсы от Елены",
-            icon: <Icon path={mdiCartOutline} size={1}/>,
+            title: "Курсы",
+            icon: <Icon path={mdiListBoxOutline} size={1}/>,
             checkStar: false,
             link: "/course"
         },
         {
             id: 2,
-            title: "Web-приложения",
-            icon: <Icon path={mdiApplication} size={1}/>,
+            title: "Команда",
+            icon: <Icon path={mdiAccountMultiple} size={1}/>,
             checkStar: false,
             link: "/sections"
         },
         {
             id: 3,
-            title: "Домашние задания",
-            icon: <Icon path={mdiMultimedia} size={1}/>,
+            title: "Консультация",
+            icon: <Icon path={mdiLaptopAccount} size={1}/>,
             checkStar: true,
             link: "/hw"
         },
         {
             id: 4,
-            title: "Гайды для мам",
+            title: "Полезное для мам",
             icon: <Icon path={mdiHumanBabyChangingTable} size={1}/>,
             checkStar: true,
             link: "/guides_mom"
         }
     ]
-    const supportStar = [
-        {
-            id: 0,
-            title: "Растим звезду 3.0",
-            icon: <Icon path={mdiStarFourPoints} size={1}/>,
-            checkStar: true,
-            link: "/star"
-        },
-
-        {
-            id: 1,
-            title: "Вебинары",
-            icon: <Icon path={mdiLaptopAccount} size={1}/>,
-            checkStar: true,
-            link: "/web_star"
-        }
-    ]
-    const userTelegram = localStorage.getItem('userTelegram');
-
-    useEffect(() => {
-        const fetchData = async () => {
-            // navigate("/login");
-            // const backendUrl = process.env.NODE_ENV === 'production'
-            //     ? 'https://elenakorneva.site/dataUserForPersonalArea'
-            //     : 'http://localhost:8080/dataUserForPersonalArea';
-            const backendUrl = 'https://elenakorneva.site/dataUserForPersonalArea'
-            const dataToAPI = process.env.NODE_ENV === 'production'
-                ? { chatId: user?.id,
-                    userTelegram: userTelegram}
-                // : { chatId: '1081994928' };
-                : { chatId: user?.id,
-                    userTelegram: userTelegram};
-            try {
-                // Отправка POST-запроса с данными на бэкенд
-                const response = await axios.post(backendUrl, dataToAPI);
-                if (response.data.userTelegram === null){
-                    navigate("/login");
-                } else {
-                    await setResponseData(response.data);
-                    dispatch(setDataFromApi(response.data));
-                    localStorage.setItem('userTelegram', JSON.stringify(response.data?.userTelegram?.chatId))
-                }
-            } catch (error) {
-                console.error('Ошибка при получении данных:', error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -219,28 +149,22 @@ export default function PersistentDrawerLeft() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-    const checkStar = (check) => {
-        return dataUser?.userTelegram?.access_intensive_3_0 === true;
-    };
 
     return (
         <Box sx={{display: 'flex'}}>
             <CssBaseline/>
-            <AppBar position="fixed" open={open} sx={{backgroundColor: "#3a5493"}}>
+            <AppBar position="fixed" open={open} sx={{backgroundColor: "white"}}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
                         edge="start"
-                        sx={{mr: 2, ...(open && {display: 'none'})}}
+                        sx={{ color: "#2f2f2f",mr: 2, ...(open && {display: 'none'})}}
                     >
                         <MenuIcon/>
                     </IconButton>
-                        <Box className="box-header">
-                            <Box className="title">{title}</Box>
-                            <Box className="title" > {userTelegram}</Box>
-                        </Box>
+
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -284,30 +208,6 @@ export default function PersistentDrawerLeft() {
                     ))}
                 </List>
                 <Divider/>
-                {checkStar() && (
-                    <List>
-                        {supportStar.map((index) => (
-                            <ListItem key={index.id} disablePadding>
-                                <Link href={index.link}>
-                                    <ListItemButton>
-                                        <ListItemIcon
-                                            sx={{
-                                                minWidth: 0,
-                                                mr: open ? 3 : 'auto',
-                                                justifyContent: 'center',
-                                            }}
-                                        >
-                                            {index.icon}
-                                        </ListItemIcon>
-                                        <ListItemText primary={index.title} sx={{opacity: open ? 1 : 0}}
-                                                      className="listItemText"/>
-                                    </ListItemButton>
-                                </Link>
-                            </ListItem>
-                        ))}
-                    </List>
-                )}
-                <Divider/>
                 <List>
                     {supportSupport.map((index) => (
                         <ListItem key={index.id} disablePadding>
@@ -330,24 +230,6 @@ export default function PersistentDrawerLeft() {
                     ))}
                 </List>
                 <Divider/>
-                <List>
-                    {support.map((index) => (
-                        <ListItem key={index.id} disablePadding>
-                            <ListItemButton onClick={index.command}>
-                                <ListItemIcon
-                                    sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    {index.icon}
-                                </ListItemIcon>
-                                <ListItemText primary={index.title} sx={{opacity: open ? 1 : 0}}/>
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
             </Drawer>
             <Main open={open}>
                 <Typography paragraph>

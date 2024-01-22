@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -25,104 +25,106 @@ import Box from "@mui/material/Box";
 import rb from "../../img/right-bottom.svg";
 
 
-
 export default function TimeLine() {
-    const Description = [
-        "<p><strong>Работа с положительными эмоциями<br /></strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"Как правильно распознать эмоции своего ребенка\"</li>\n" +
-        "<li>\"Для чего работать с положительными эмоциями\"</li>\n" +
-        "<li>\"Особенности эмоционального развития у малышей\"</li>\n" +
-        "<li>\"Особые алгоритмы работы для вашего возраста\"</li>\n" +
-        "<li>\"Эмоциональная связь - основа формирования сильной личности \"</li>\n" +
-        "</ul>\n" +
-        "<p>&nbsp;</p>" +
-        "<p>2 домашних задания<br />" +
-        "2 задания для работы в мини группах<br />" +
-        "2 семинара в Zoom<br />" +
-        "Рекомендации для печати</p>",
-
-        "<p><strong>Работа с отрицательными эмоциями</strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"3 основных способа работы с отрицательными эмоциями\"</li>\n" +
-        "<li>\"Возрастные особенности проживания отрицательных эмоций у малышей\"</li>\n" +
-        "<li>\"Как принять отрицательные эмоции ребенка\"</li>\n" +
-        "<li>\"Учимся жить с отрицательными эмоциями\"</li>\n" +
-        "</ul>\n" +
-        "<p><strong>Контейнирование эмоций</strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"Что такое Контейнирование\"</li>\n" +
-        "<li>\"Алгоритм работы с эмоциями\"</li>\n" +
-        "<li>\"Особенность контейнирования у малышей\"</li>\n" +
-        "<li>\"Разбор ошибок при работе с методикой\"</li>\n" +
-        "</ul>\n" +
-        "<p>&nbsp;</p>" +
-        "<p>2 домашних задания<br />" +
-        "2 задания для работы в мини группах<br />" +
-        "2 семинара в Zoom<br />" +
-        "Рекомендации для печати</p>",
-
-        "<p><strong>Истерики<br /></strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"Истерики. Принятие истерик\"</li>\n" +
-        "<li>\"Виды истерик\"</li>\n" +
-        "<li>\"Как не допустить истерику\"</li>\n" +
-        "<li>\"Алгоритмы работы с истериками\"</li>\n" +
-        "<li>\"Варианты поведения после истерики\"</li>\n" +
-        "<li>\"Разбор родительских ошибок\"</li>\n" +
-        "</ul>\n" +
-        "<p>&nbsp;</p>" +
-        "<p>2 домашних задания<br />" +
-        "2 задания для работы в мини группах<br />" +
-        "2 семинара в Zoom<br />" +
-        "Рекомендации для печати</p>",
-        "<p><strong>Домашний агрессор<br /></strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"Кусает, щипает, бросает. Причины\"</li>\n" +
-        "<li>\"Почему не работают такие варианты, как кусать в ответ, обижаться, показывать боль и др. \"</li>\n" +
-        "<li>\"Варианты работы в различных ситуациях\"</li>\n" +
-        "<li>\"Почему у вас не получается. РазБор ошибок \"</li>\n" +
-        "</ul>\n" +
-        "<p>&nbsp;</p>" +
-        "<p>2 домашних задания<br />" +
-        "2 задания для работы в мини группах<br />" +
-        "2 семинара в Zoom<br />" +
-        "Рекомендации для печати</p>",
-        "<p><strong>Запреты и слова \"НЕТ\" и \"НЕЛЬЗЯ\"</strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"Почему не работают запреты\"</li>\n" +
-        "<li>\"Что такое<strong>&nbsp;\"преодоление запрета\"</strong>&nbsp;и как это использовать в развитии личности\"</li>\n" +
-        "<li>\"В чем диаметральная разница методик\"</li>\n" +
-        "<li>\"2 ключевых алгоритма работы с запретом\"</li>\n" +
-        "<li>\"Разбор частых ошибок \"</li>\n" +
-        "</ul>\n" +
-        "<p><strong>Эмоциональное развитие мамы</strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"В чем ключевая роль мамы в развитии личности\"</li>\n" +
-        "<li>\"Не бойтесь показать отрицательные эмоции\"</li>\n" +
-        "<li>\"Алгоритмы работы с эмоциями родителей\"</li>\n" +
-        "</ul>\n" +
-        "<p>2 домашних задания<br />" +
-        "2 задания для работы в мини группах<br />" +
-        "2 семинара в Zoom<br />" +
-        "Рекомендации для печати</p>",
-        "<p><strong>Удобный ребенок или харизматичная личность<br /></strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"Как не вырастить удобного ребенка\"</li>\n" +
-        "<li>\"Особенности формирования харизмы\"</li>\n" +
-        "<li>\"Развитие яркой личности через работу с эмоциями\"</li>\n" +
-        "</ul>\n" +
-        "<p><strong>Границы и правила</strong></p>\n" +
-        "<ul>\n" +
-        "<li>\"Почему отсутствие границ осложняет жизнь\"</li>\n" +
-        "<li>\"Как устанавливать правила и границы\"</li>\n" +
-        "<li>\"Это работает как в 5 месяцев так и в 30 лет\"</li>\n" +
-        "<li>\"Разбор родительских ошибок \"</li>\n" +
-        "</ul>\n" +
-        "<p>2 домашних задания<br />" +
-        "2 задания для работы в мини группах<br />" +
-        "2 семинара в Zoom<br />" +
-        "Рекомендации для печати</p>",
+    const descriptionCourse = [
+        {
+            index: 0,
+            linkToTilda: 'https://landinghw.kornevgmbh.com/',
+            title: 'Ежедневно развивать малыша',
+            subTitle: 'с <strong>рассылкой</strong> домашних заданий для Вашего возраста',
+            img: require("../../img/emo-cards/emo-img-3.png"),
+            description:
+                '<div class="card-description text-left">\n' +
+                '<h3>Ежедневная рассылка домашних заданий для детей от 1 до 26 месяцев</h3> ' +
+                '<div class="text-left">\n' +
+                '<p><strong>С детальными видео и текстовыми заданиями&nbsp;</strong></p>\n' +
+                '<p>по развитию речи, двигательной активности и эмоционального интеллекта.</p>\n' +
+                '<p><strong>Удобно и доступно</strong></p>\n' +
+                '<p>с рассылками&nbsp; в ваш Телеграм-аккаунт&nbsp; теории, тестов, гайдов и домашних заданий.</p>\n' +
+                '<p><strong>С адаптированными под возраст ребенка материалами, </strong></p>\n' +
+                '<p>доступными&nbsp; от 3 недель до 2,5 лет</p>\n' +
+                '<p><strong>Без необходимости покупать дополнительное оборудование</strong></p>\n' +
+                '<p>все задания выполняются без финансовых затрат</p>' +
+                '</div>' +
+                '</div>'
+        },
+        {
+            index: 1,
+            linkToTilda: 'https://landing.kornevgmbh.com/',
+            title: 'Вырастить успешную личность',
+            img: require("../../img/emo-cards/emo-img-3.png"),
+            subTitle: 'с <strong>вебинарами</strong>  по гармоничному  развитию малышей от 0 до 24 месяцев',
+            description:
+                '<div class="card-description text-left">\n' +
+                '<h3 class="mb-2">&nbsp;</h3>' +
+                '<h3>Авторские вебинары по гармоничному развитию детей от от 0 до 24 месяцев</h3> ' +
+                '<div class="text-left">\n' +
+                '<ul>\n' +
+                '<li>Уникальные вебинары с простыми и&nbsp; понятными объяснениями сложных процессов детского развития</li>\n' +
+                '<li>Содержат концентрированную и полезную информацию по каждому возрастному периоду</li>\n' +
+                '<li>Подробно разъясняют какими действиями Вы можете достичь максимальных результатов в развитии крохи</li>\n' +
+                '</ul>\n' +
+                '</div>' +
+                '</div>'
+        },
+        {
+            index: 2,
+            linkToTilda: 'https://landing-dream.kornevgmbh.com/',
+            title: 'Наладить сон ребенка',
+            subTitle: '<div style="padding: 0 6px">научив его самостоятельному засыпанию с помощью <strong>Чат-бота по сну</strong></div>',
+            img: require("../../img/emo-cards/emo-img-3.png"),
+            description:
+                '<div class="card-description text-left">\n' +
+                '<h3>Наладить сон ребенка </h3> ' +
+                '<h3 class="mb-2">&nbsp;</h3>' +
+                '<ul>\n' +
+                '<li>на основе одной из четырех методик, обучив самостоятельному засыпанию</li>\n' +
+                '<li>избавив от недосыпа всю семью</li>\n' +
+                '<li>с наиболее подходящей по возрасту методикой, решая проблемы:\n' +
+                '<ul>\n' +
+                '<li> раннего пробуждения</li>\n' +
+                '<li> бесконечных ночных кормлений</li>\n' +
+                '<li> "часовых" укладываний</li>\n' +
+                '<li> частых пробуждений</li>\n' +
+                '<li> утомительных укачиваний&nbsp;и др.</li>\n' +
+                '</ul>\n' +
+                '</li>\n' +
+                '</ul>' +
+                '</div>'
+        },
+        {
+            index: 3,
+            linkToTilda: 'https://elenakorneva.site/speakLandingSpecial',
+            title: 'доРечевой 30-дневный интенсив',
+            greenTitle: 'доРечевой интенсив',
+            subTitle: '<div style="padding: 0 6px"><strong>"От звука к слову"</strong> - рaзвитие речевого навыка</div>',
+            img: require("../../img/emo-cards/emo-img-3.png"),
+            description: ' <div class="card-description text-left">\n' +
+                '<h3 class="mb-2">Этот интенсив для Вас, если:</h3>' +
+                '<h3 class="mb-2">&nbsp;</h3>' +
+                '<ul>\n' +
+                '<li>Вас волнуют вопросы, связанные с речью вашего малыша, и вы устали от противоречивой и неполной информации в интернете</li>\n' +
+                '<li>Вы не готовы &laquo;ждать до 3 лет&raquo;, чтобы после исправлять уже сформировавшиеся проблемы с речью вашего ребенка</li>\n' +
+                '<li>Вы сомневаетесь, все ли в порядке с речевым развитием вашего малыша, и не до конца понимаете, что вам делать&nbsp;</li>\n' +
+                '<li>Вам важно понимать, как на самом деле устроена речь вашего ребенка, и как работать с ней эффективно и правильно</li>\n' +
+                '<li>Ваш малыш родился раньше срока или были проблемы во время беременности или родов</li>\n' +
+                '<li>Ваш ребенок растет в семье, где используют два и более языка</li>\n' +
+                '</ul>' +
+                '<p class="mb-2">С какими проблемами поможет интенсив?</p>' +
+                '<ul>\n' +
+                '<li>Ребенок не стремится говорить или использовать речь для коммуникации</li>\n' +
+                '<li>Малыш ограничивается использованием одного слога или звука вместо полных слов</li>\n' +
+                '<li>Ребенок не расширяет свой активный словарь и не повторяет слова, которые слышит</li>\n' +
+                '<li>Малыш полагается на жесты или мимику, вместо использования слов для выражения своих потребностей или желаний</li>\n' +
+                '<li>Ребенок не реагирует или не отзывается на свое имя, когда его зовут</li>\n' +
+                '<li>Малыш испытывает трудности в понимании или выполнении простых инструкций</li>\n' +
+                '<li>Ребенок использует ограниченное количество слов и не проявляет стремления произносить новые слова</li>\n' +
+                '<li>Малыш произносит отдельные слова, но не способен составить связные фразы или предложения</li>\n' +
+                '<li>Ребенок испытывает трудности в установлении речевого контакта и взаимодействии с родителями и сверстниками</li>\n' +
+                '<li>Малыш имеет недостаточный уровень речевого развития по сравнению со сверстниками</li>\n' +
+                '</ul>' +
+                '</div>'
+        },
     ]
     const [dialogOpen, setDialogOpen] = useState(false);
     const [dialogText, setDialogText] = useState('');
@@ -133,58 +135,18 @@ export default function TimeLine() {
         setDialogOpen(true);
         setDialogText(text)
     }
-    const timeLineNew = [
-        { week: "1 - я неделя",
-          title: "Работа с положительными эмоциями",
-          icon: "",
-          description: Description[0],
-          img: ''
-        },
-        { week: "2 - я неделя",
-            title: "Работа с отрицательными эмоциями <br />\n" +
-                   "Контейнирование эмоций",
-            icon: "",
-            description: Description[1],
-            img: ''
-        },
-        { week: "3 - я неделя",
-            title: "Работа с истериками",
-            icon: "",
-            description:Description[2],
-            img: ''
-        },
-        { week: "4 - я неделя",
-            title: "Домашний беспредельщик",
-            icon: "",
-            description: Description[3],
-            img: ''
-        },
-        { week: "5 - я неделя",
-            title: "Запреты и слова \"НЕТ\" и \"НЕЛЬЗЯ\" <br/>\n" +
-                "Эмоциональное развитие мамы",
-            icon: "",
-            description: Description[4],
-            img: ''
-        },
-        { week: "6 - я неделя",
-            title: "Удобный ребенок или харизматичная личность<br/>\n" +
-                "Устанавление границ и правил",
-            icon: "",
-            description: Description[5],
-            img: ''
-        }
-    ]
     return (
         <Container className={"box-center"}>
-            {timeLineNew.map((element, index) =>
+            {descriptionCourse.map((element, index) =>
                 <Card className={"card-timeline"}>
                     <CardContent sx={{position: "relative"}}>
-                        <Box sx={{display:"flex"}} justifyContent={"flex-start"} alignItems={"flex-start"} flexDirection={"column"}>
-                            <Typography variant="body2" color="text.secondary">
-                                {element.week}
+                        <Box sx={{display: "flex"}} justifyContent={"flex-start"} alignItems={"flex-start"}
+                             flexDirection={"column"}>
+                            <Typography variant="body2" color="text.secondary" className={"title-courses"}>
+                                {element.title}
                             </Typography>
                             <Typography variant="h5" component="div" className={"h5-size"}
-                                        dangerouslySetInnerHTML={{__html: element.title}} />
+                                        dangerouslySetInnerHTML={{__html: element.subTitle}}/>
                         </Box>
                         <Box
                             component="img"
@@ -195,14 +157,18 @@ export default function TimeLine() {
                         />
                     </CardContent>
                     <CardActions sx={{display: "flex", justifyContent: 'center'}}>
-                    <Button className={'timeline-button'}
-                            onClick={() => openDialog(element.description)}>
-                    Подробнее</Button>
+                        <Button className={'timeline-button'}
+                                onClick={() => openDialog(element.description)}>
+                            Подробнее</Button>
+                        <a href={element.linkToTilda}>
+                            <Button className={'timeline-button'}>
+                                Перейти</Button>
+                        </a>
                     </CardActions>
                 </Card>
             )
             }
-            <AlertDialogSlide isOpen={dialogOpen} closeDialog={ closeDialog} text={dialogText}/>
+            <AlertDialogSlide isOpen={dialogOpen} closeDialog={closeDialog} text={dialogText}/>
         </Container>
     );
 }

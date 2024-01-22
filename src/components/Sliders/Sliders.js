@@ -8,59 +8,17 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+// import { autoPlay } from 'react-swipeable-views-utils';
 import Container from "@mui/material/Container";
 import "./Slider.css"
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-    {
-        label: 'Irina',
-        imgPath: require("./slider/feedback-emo-1.jpg")
-    },
-    {
-        label: 'Светлана',
-        imgPath: require("./slider/feedback-emo-2.jpg")
-    },
-    {
-        label: 'Лариса',
-        imgPath: require("./slider/feedback-emo-3.jpg")
-    },
-    {
-        label: 'Наталия',
-        imgPath: require("./slider/feedback-emo-4.jpg")
-    },
-    {
-        label: 'Лена',
-        imgPath: require("./slider/feedback-emo-5.jpg")
-    },
-    {
-        label: 'Жанна',
-        imgPath: require("./slider/feedback-emo-6.jpg")
-    },
-    {
-        label: 'Настя',
-        imgPath: require("./slider/feedback-emo-7.jpg")
-    },
-    {
-        label: 'Марина',
-        imgPath: require("./slider/feedback-emo-8.jpg")
-    },
-    {
-        label: 'Наташа',
-        imgPath: require("./slider/feedback-emo-9.jpg")
-    },
-    {
-        label: 'Елена П.',
-        imgPath: require("./slider/feedback-emo-10.jpg")
-    }
-];
 
-export default  function Slider() {
+export default  function Slider({imagesFrom}) {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
-    const maxSteps = images.length;
+    const maxSteps = imagesFrom.length;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -75,8 +33,8 @@ export default  function Slider() {
     };
 
     return (
-        <Container disableGutters >
-            <Box sx={{ maxWidth: 400, flexGrow: 1, margin: 'auto' }} >
+        <Container disableGutters className={"slider-container"}>
+            <Box sx={{ maxWidth: 400, flexGrow: 1, margin: 'auto' }} className={"max-container"}>
                 <Paper
                     square
                     elevation={0}
@@ -84,26 +42,28 @@ export default  function Slider() {
                         display: 'flex',
                         alignItems: 'center',
                         height: 50,
-                        pl: 2
+                        pl: 2,
+                        bgcolor: 'background.default',
                     }}
                 >
-                    <Typography>{images[activeStep].label}</Typography>
+                    <Typography>{imagesFrom[activeStep].label}</Typography>
                 </Paper>
-                <AutoPlaySwipeableViews
+                <SwipeableViews
+                    className={"image-container"}
                     axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                     index={activeStep}
                     onChangeIndex={handleStepChange}
                     enableMouseEvents
                 >
-                    {images.map((step, index) => (
-                        <div key={step.label}>
+                    {imagesFrom.map((step, index) => (
+                        <div key={index}>
                             {Math.abs(activeStep - index) <= 2 ? (
                                 <Box
                                     component="img"
                                     sx={{
-                                        height: 390,
+                                        height: 360,
                                         display: 'block',
-                                        maxWidth: 460,
+                                        maxWidth: 400,
                                         overflow: 'hidden',
                                         width: '100%',
                                     }}
@@ -113,7 +73,7 @@ export default  function Slider() {
                             ) : null}
                         </div>
                     ))}
-                </AutoPlaySwipeableViews>
+                </SwipeableViews>
                 <MobileStepper
                     steps={maxSteps}
                     position="static"
@@ -124,7 +84,6 @@ export default  function Slider() {
                             onClick={handleNext}
                             disabled={activeStep === maxSteps - 1}
                         >
-                            Дальше
                             {theme.direction === 'rtl' ? (
                                 <KeyboardArrowLeft />
                             ) : (
@@ -139,7 +98,6 @@ export default  function Slider() {
                             ) : (
                                 <KeyboardArrowLeft />
                             )}
-                            Назад
                         </Button>
                     }
                 />
