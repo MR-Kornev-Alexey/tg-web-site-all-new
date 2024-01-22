@@ -15,7 +15,8 @@
 .timeline-button {
     margin-top: 6px;
     width: 260px;
-    color: #444444;
+    color: #444444!important;
+    border: 2px solid #444444!important;
 }
 
 .timeline-content-title {

@@ -14,7 +14,7 @@ import BrowserNotSupportedIcon from '@mui/icons-material/BrowserNotSupported';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation';
 import Button from "@mui/material/Button";
-import "./Timeline.css"
+import "../TimeLine/Timeline.css"
 import AlertDialogSlide from "../Dialog/Dialog"
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -29,7 +29,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import Grid from "@mui/material/Grid";
 
 
-export default function TimeLine() {
+export default function listOfCourses() {
     const descriptionCourse = [
         {
             index: 0,

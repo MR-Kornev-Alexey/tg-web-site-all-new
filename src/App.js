@@ -9,6 +9,7 @@ import Success from "./components/BackPayment/Success";
 import Failed from "./components/BackPayment/Failed";
 import {StyledEngineProvider} from "@mui/material";
 import DrawerLeft from "./components/Drawer/anotherDrawer"
+import MainCourses from "./components/MainCourses/MainCourses"
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             </React.StrictMode>
             <Routes>
                 <Route index element={<Main />}/>
+                <Route path={'course'} element={<MainCourses/>}/>
                 <Route path={'privacy'} element={<Privacy />}/>
                 <Route path={'terms'} element={<Terms />}/>
                 <Route path={'success'} element={<Success />}/>

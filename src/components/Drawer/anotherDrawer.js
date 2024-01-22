@@ -25,7 +25,8 @@ import {
     mdiListBoxOutline,
     mdiNoteMultipleOutline,
     mdiFileDocumentCheckOutline,
-    mdiHumanBabyChangingTable
+    mdiHumanBabyChangingTable,
+    mdiAccountSchoolOutline
 } from "@mdi/js";
 
 import "./Drawer.css"
@@ -131,10 +132,17 @@ export default function DrawerLeft() {
             title: "Консультация",
             icon: <Icon path={mdiLaptopAccount} size={1}/>,
             checkStar: true,
-            link: "/hw"
+            link: "/consultation"
         },
         {
             id: 4,
+            title: "Бесплатные уроки",
+            icon: <Icon path={mdiAccountSchoolOutline} size={1}/>,
+            checkStar: true,
+            link: "/free_lessons"
+        },
+        {
+            id: 5,
             title: "Полезное для мам",
             icon: <Icon path={mdiHumanBabyChangingTable} size={1}/>,
             checkStar: true,

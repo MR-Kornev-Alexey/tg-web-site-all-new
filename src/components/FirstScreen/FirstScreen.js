@@ -21,10 +21,10 @@ export default function FirstScreen() {
     return (
         <Container component="section">
             <Grid container>
-                <Grid item xs={12} md={6}
-                      sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', order: {md: 1, sm: 2, xs: 2}}}>
+                <Grid item xs={12} md={7}
+                      sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',   marginTop: {md: 0, sm: 3, xs: 2}, order: {md: 1, sm: 2, xs: 2}}}>
                     <Typography gutterBottom sx={{marginTop: 2, display: {md: "flex", sm: "none", xs: "none"}}} className="top-mainSubTitle" >
-                        ваш эксперт в развитии малыша
+                        ваш эксперт в материнстве и развитии малыша
                     </Typography>
                     <Typography className="mainTitle">
                         Елена Корнева
@@ -42,16 +42,16 @@ export default function FirstScreen() {
                     )
                     }
                 </Grid>
-                <Grid item xs={12} md={6} sx={{
+                <Grid item xs={12} md={5} sx={{
                     display: "flex",
                     justifyContent: {md: 'flex-end', sm: 'center', xs: 'center'},
                     alignItems: {md: 'flex-end', sm: 'center', xs: 'center'},
-                    marginTop: {md: 0, sm: 3, xs: 3},
+                    marginY: {md: 0, sm: 3, xs: 3},
                     order: {md: 2, sm: 1, xs: 1},
                     flexDirection: "column"
                 }}>
                     <Typography gutterBottom sx={{textAlign: "center", display: {md: "none", sm: "content", xs: "content"}}} className="top-mainSubTitle">
-                        ваш эксперт в развитии малыша
+                        ваш эксперт в материнстве и развитии малыша
                     </Typography>
                     <Box
                         component="img"

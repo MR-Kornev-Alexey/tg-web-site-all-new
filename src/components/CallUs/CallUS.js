@@ -17,15 +17,15 @@ export default function CallUS({title}) {
             <Container sx={{pt: 4, pb: 2}}>
                 <Grid container className={"box-center"}>
                     <Grid item md={6} sm={11} xs={11} display={'flex'} justifyContent={"center"} alignItems={"center"}>
-                        <Box
-                            component="img"
-                            src={require("./nasya.png")}
-                            alt="Главная картинка"
-                            sx={{
-                                width: '100%',
-                                maxWidth:70
-                            }}
-                        />
+                        {/*<Box*/}
+                        {/*    component="img"*/}
+                        {/*    src={require("./nasya.png")}*/}
+                        {/*    alt="Главная картинка"*/}
+                        {/*    sx={{*/}
+                        {/*        width: '100%',*/}
+                        {/*        maxWidth:70*/}
+                        {/*    }}*/}
+                        {/*/>*/}
                         <Box className={"top-mainSubTitle"} sx={{marginLeft:2}}>Поддержка</Box>
                     </Grid>
                     <Grid item md={6} sm={11} xs={11}  display={'flex'} justifyContent={"center"} alignItems={"center"}>

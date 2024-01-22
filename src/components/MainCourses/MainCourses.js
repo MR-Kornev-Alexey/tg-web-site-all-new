@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './Main.css'
+import '../main/Main.css'
 import FirstScreen from "../FirstScreen/FirstScreen"
 import Price from "../Price/Price";
 import LineBlock from "../SecondScreen/LineBlock"
@@ -84,6 +84,7 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import CallUS from "../CallUs/CallUS";
 import Footer from "../Footer/Footer";
 import Consultation from "../Consultation/Consultation";
+import listOfCourses from "../ListOfCourses/ListOfCourses";
 
 
 const ScrollToTopButton = () => {
@@ -132,14 +133,14 @@ const ScrollToTopButton = () => {
     );
 };
 
-export default function Main() {
+export default function MainCourses() {
     return (
         <Box>
             {/*<Author/>*/}
-            <FirstScreen/>
+            {/*<FirstScreen/>*/}
             {/*<CountdownTimer />*/}
-            <LineBlock title={"Могу вам помочь"}/>
-            <TimeLine/>
+            <LineBlock title={"Платные курсы"}/>
+            <listOfCourses/>
             {/*<ListHW />*/}
             {/*<LineBlock title={"И если Вы:"}/>*/}
             {/*<SecondListLeft />*/}
