@@ -1,21 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import '../main/Main.css'
-import FirstScreen from "../FirstScreen/FirstScreen"
-import Price from "../Price/Price";
 import LineBlock from "../SecondScreen/LineBlock"
-import ListHW from "../SecondScreen/ListHW"
-import ThirdScreen from "../SixWeek/ThirdScreen";
-import ProductCTA from "../GTA/ProductCTA";
-import Algorithm from "../Algorithm/Algorithm";
-import Author from "../Author/Author";
-import NewExamples from "../Examples/Examples";
-import SecondListLeft from "../SecondScreen/SecondListLeft";
-import SixWeek from "../SixWeek/SixWeek";
-import HowWork from "../HowWork/HowWork";
 import Slider from "../Sliders/Sliders";
-import TimeLine from "../TimeLine/TimeLine";
-import WhatCourse from "../WhatCourse/WhatCourse";
-import CountdownTimer from "../CountdownTimer/CountdownTimer";
+import ListOfCourses from "../ListOfCourses/ListOfCourses"
 import {Box} from "@mui/system";
 
 const images = [
@@ -84,7 +71,8 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import CallUS from "../CallUs/CallUS";
 import Footer from "../Footer/Footer";
 import Consultation from "../Consultation/Consultation";
-import listOfCourses from "../ListOfCourses/ListOfCourses";
+import ListOfFreeCourses from "../ListOfCourses/ListOfFreeCourses";
+
 
 
 const ScrollToTopButton = () => {
@@ -136,29 +124,15 @@ const ScrollToTopButton = () => {
 export default function MainCourses() {
     return (
         <Box>
-            {/*<Author/>*/}
-            {/*<FirstScreen/>*/}
-            {/*<CountdownTimer />*/}
             <LineBlock title={"Платные курсы"}/>
-            <listOfCourses/>
-            {/*<ListHW />*/}
-            {/*<LineBlock title={"И если Вы:"}/>*/}
-            {/*<SecondListLeft />*/}
-            <LineBlock title={"Консультация"}/>
-            <Consultation />
-            {/*<SixWeek/>*/}
-            {/*<LineBlock title={"Как работаем ?"}/>*/}
-            {/*<HowWork />*/}
-            <LineBlock title={"Остались вопросы?"}/>
-            <CallUS/>
+            <ListOfCourses/>
+            <LineBlock title={"Бесплатные курсы"}/>
+            <ListOfFreeCourses />
+
             <LineBlock title={"Отзывы"}/>
             <Slider imagesFrom={images}/>
-            {/*<LineBlock title={"Программа курса"}/>*/}
-
-            {/*<LineBlock title={"Елена Корнева"}/>*/}
-
-            {/*<LineBlock title={"Тарифы"}/>*/}
-            {/*<Price />*/}
+            <LineBlock title={"Вопросы?"}/>
+            <CallUS/>
             <Footer/>
             <ScrollToTopButton/>
         </Box>

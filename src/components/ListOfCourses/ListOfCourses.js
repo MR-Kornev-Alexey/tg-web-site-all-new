@@ -1,46 +1,27 @@
 import React, {useEffect, useState} from 'react';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
-import ChildCareIcon from '@mui/icons-material/ChildCare';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import AdjustIcon from '@mui/icons-material/Adjust';
-import BrowserNotSupportedIcon from '@mui/icons-material/BrowserNotSupported';
-import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
-import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation';
 import Button from "@mui/material/Button";
-import "../TimeLine/Timeline.css"
-import AlertDialogSlide from "../Dialog/Dialog"
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import rb from "../../img/right-bottom.svg";
-import Link from "@mui/material/Link";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import ListAltIcon from '@mui/icons-material/ListAlt';
-import Grid from "@mui/material/Grid";
 
 
-export default function listOfCourses() {
+
+export default function ListOfCourses() {
     const descriptionCourse = [
         {
             index: 0,
             linkToTilda: 'https://landinghw.kornevgmbh.com/',
             title: 'Ежедневно развивать малыша',
             subTitle: 'с <strong>рассылкой</strong> домашних заданий для Вашего возраста',
-            img: require("../../img/emo-cards/emo-img-3.png"),
+            img: require("../../img/ImageCards/card-image-gray-1.jpg"),
             description:
+                '<h3 >&nbsp;</h3>' +
                 '<div>\n' +
                 '<h3>Ежедневная рассылка домашних заданий для детей от 1 до 26 месяцев</h3> ' +
-                '<h3 >&nbsp;</h3>' +
                 '<ul>\n' +
                 '<li><strong>С детальными видео и текстовыми заданиями&nbsp;</strong>\n' +
                 '<ul>\n' +
@@ -69,12 +50,12 @@ export default function listOfCourses() {
             index: 1,
             linkToTilda: 'https://landing.kornevgmbh.com/',
             title: 'Вырастить успешную личность',
-            img: require("../../img/emo-cards/emo-img-3.png"),
+            img: require("../../img/ImageCards/card-image-gray-2.jpg"),
             subTitle: 'с <strong>вебинарами</strong>  по гармоничному  развитию малышей от 0 до 24 месяцев',
             description:
                 '<div >\n' +
-                '<h3>Авторские вебинары по гармоничному развитию детей от от 0 до 24 месяцев</h3> ' +
                 '<h3 >&nbsp;</h3>' +
+                '<h3>Авторские вебинары по гармоничному развитию детей от от 0 до 24 месяцев</h3> ' +
                 '<ul>\n' +
                 '<li>Уникальные вебинары с простыми и&nbsp; понятными объяснениями сложных процессов детского развития</li>\n' +
                 '<li>Содержат концентрированную и полезную информацию по каждому возрастному периоду</li>\n' +
@@ -87,11 +68,11 @@ export default function listOfCourses() {
             linkToTilda: 'https://landing-dream.kornevgmbh.com/',
             title: 'Наладить сон ребенка',
             subTitle: '<div>научив его самостоятельному засыпанию с помощью <strong>Чат-бота по сну</strong></div>',
-            img: require("../../img/emo-cards/emo-img-3.png"),
+            img: require("../../img/ImageCards/card-image-gray-6.jpg"),
             description:
                 '<div>\n' +
+                '<h3 >&nbsp;</h3>' +
                 '<h3>Наладить сон ребенка </h3> ' +
-                '<h3 class="mb-2">&nbsp;</h3>' +
                 '<ul>\n' +
                 '<li>на основе одной из четырех методик, обучив самостоятельному засыпанию</li>\n' +
                 '<li>избавив от недосыпа всю семью</li>\n' +
@@ -114,10 +95,10 @@ export default function listOfCourses() {
             greenTitle: 'Как эффективно управлять эмоциями ребенка',
             subTitle: 'и научится управлять эмоциями ребенка',
             showBF: true,
-            img: ['3_2.png', '3_2.png', '3_3.png'],
+            img: require("../../img/ImageCards/card-image-gray-9.jpg"),
             description: '<div >\n' +
-                '<h3 >Курс для вас, если ваш малыш:</h3> ' +
                 '<h3 >&nbsp;</h3>' +
+                '<h3 >Курс для вас, если ваш малыш:</h3> ' +
                 '<ul>\n' +
                 '<li>Уже проявляет яркие эмоции и ему от 5 до 36 месяцев</li>\n' +
                 '<li>Не знает и понимает границ</li>\n' +
@@ -147,10 +128,10 @@ export default function listOfCourses() {
             title: 'Усилить  речь ребенка',
             greenTitle: 'доРечевой интенсив',
             subTitle: '<div>с  30-дневным доРечевым интенсивом <strong>"От звука к слову"</strong> - рaзвитие речевого навыка</div>',
-            img: require("../../img/emo-cards/emo-img-3.png"),
+            img: require("../../img/ImageCards/card-image-gray-3.jpg"),
             description: ' <div >\n' +
-                '<h3 >Этот интенсив для Вас, если:</h3>' +
                 '<h3 >&nbsp;</h3>' +
+                '<h3 >Этот интенсив для Вас, если:</h3>' +
                 '<ul>\n' +
                 '<li>Вас волнуют вопросы, связанные с речью вашего малыша, и вы устали от противоречивой и неполной информации в интернете</li>\n' +
                 '<li>Вы не готовы &laquo;ждать до 3 лет&raquo;, чтобы после исправлять уже сформировавшиеся проблемы с речью вашего ребенка</li>\n' +
@@ -174,68 +155,58 @@ export default function listOfCourses() {
                 '</ul>' +
                 '</div>'
         },
+        {
+            index: 6,
+            linkToTilda: 'https://diaper.kornevgmbh.com/',
+            title: 'Cекреты ЖКТ крохи',
+            greenTitle: '',
+            subTitle: 'Проблемы животика и кишечника ребенка от 0 до 6 месяцев',
+            showBF: true,
+            img: require("../../img/ImageCards/card-image-gray-12.png"),
+            description:
+                '<div>\n' +
+                '<h3 >&nbsp;</h3>' +
+                '<h3 >Газики, колики, запоры, какашечки и др.</h3>' +
+                '<li>Как работает желудочно-кишечный тракт крохи в период бурного роста и развития?</li>\n' +
+                '<li>Когда бежать за помощью, а что является вариантом нормального развития?</li>\n' +
+                '<li>Как помочь и не навредить? Какие пробиотики, пребиотики, ферменты и препараты от запоров действительно нужны вашему малышу?</li>\n' +
+                '<p>Весь материал - это увлекательное путешествие по организму ребенка с его особенностями и потребностями.</p>\n' +
+                '</ul> ' +
+                '</div>',
+            linkIn: '/diaperMystery',
+            linkLanding: '',
+            access: false
+        },
     ]
-    const [dialogOpen, setDialogOpen] = useState(false);
-    const [dialogText, setDialogText] = useState('');
-    const closeDialog = () => {
-        setDialogOpen(false);
-    };
-    const openDialog = (text) => {
-        setDialogOpen(true);
-        setDialogText(text)
-    }
     return (
         <Container className={"box-center"}>
             {descriptionCourse.map((element, index) =>
-                <Card className={"card-timeline"}>
-                    <CardContent sx={{position: "relative"}}>
-                        <Box sx={{display: "flex"}} justifyContent={"flex-start"} alignItems={"flex-start"}
-                             flexDirection={"column"}>
-                            <Typography variant="body2" color="text.secondary" className={"title-courses"}>
-                                {element.title}
-                            </Typography>
-                            <Typography variant="h5" component="div" className={"h5-size"}
-                                        dangerouslySetInnerHTML={{__html: element.subTitle}}/>
-                        </Box>
-                        <Box
-                            component="img"
-                            src={rb}
-                            alt="Главная картинка"
-                            className={"corner-timeline"}
-
-                        />
-                    </CardContent>
+                <Box>
+                <Card  className={'card-timeline'} key={index}>
+                <CardMedia
+                sx={{ height: 300}}
+                image={element.img}
+                title={element.title}
+                />
+                <CardContent>
+                    <Typography variant="body2" color="text.secondary" className={"title-courses"}>
+                        {element.title}
+                    </Typography>
+                    <Typography variant="h5" component="div" className={"h5-size"}
+                                dangerouslySetInnerHTML={{__html: element.subTitle}}/>
+                    <Typography variant="h5" component="div" className={"description-courses"}
+                                dangerouslySetInnerHTML={{__html: element.description}}/>
+                </CardContent>
                     <CardActions sx={{display: "flex", justifyContent: 'center'}}>
-                        <Button className={'timeline-button'}
-                                onClick={() => openDialog(element.description)}>
-                            Подробнее</Button>
                         <a href={element.linkToTilda}>
                             <Button className={'timeline-button'}>
                                 Перейти</Button>
                         </a>
                     </CardActions>
                 </Card>
+                </Box>
             )
             }
-            <AlertDialogSlide isOpen={dialogOpen} closeDialog={closeDialog} text={dialogText}/>
-            <Grid container display={"flex"} justifyContent={"center"} alignItems={"center"} sx={{marginTop: 2}}>
-                <Grid item xs={12} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                    <Box className="top-mainSubTitle" sx={{marginTop: 1}} >Другие курсы </Box>
-                </Grid>
-                <Grid item xs={12} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                    <Link href={"/course"} className={"btn-call"} sx={{
-                        maxWidth: 260,
-                        display: "flex",
-                        justifyContent: 'center',
-                        alignItems: "center",
-                        marginTop: {md: 2, sm: 2, xs: 2}
-                    }}>
-                        <ListAltIcon color={"#666666"}/> <Box className={"top-mainSubTitle"}
-                                                              sx={{marginLeft: 2}}>Перейти</Box>
-                    </Link>
-                </Grid>
-            </Grid>
-
         </Container>
     );
 }
