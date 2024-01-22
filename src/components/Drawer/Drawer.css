@@ -1,0 +1,46 @@
+.box-header {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.css-z4r21k {
+    margin: 0;
+    font: inherit;
+    color: rgb(56, 58, 59)!important;
+    text-decoration: none !important;
+}
+.css-yb0lig {
+    color: #4b4d52!important;
+}
+.css-10hburv-MuiTypography-root {
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.00938em;
+    display: block;
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-text-decoration: none !important;
+    text-decoration: none !important;
+    text-decoration-color: rgba(8, 37, 65, 0.8);
+}
+.css-1xylxj1-MuiTypography-root-MuiLink-root {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    text-decoration-color: rgba(8, 37, 65, 0.8);
+}
+.listItemText {
+    text-decoration: none;
+}
+.css-1xylxj1-MuiTypography-root-MuiLink-root {
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    text-decoration-color: rgba(8, 37, 65, 0.8);
+}
+.css-1xylxj1-MuiTypography-root-MuiLink-root {
+    font: inherit;
+    color: rgba(0, 0, 0, 0.9);
+    -webkit-text-decoration: none !important;
+    text-decoration: none !important;
+    text-decoration-color: rgba(25, 118, 210, 0.4);
+}
