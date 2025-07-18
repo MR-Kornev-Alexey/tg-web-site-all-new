@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import '../main/Main.css'
 import Typography from "../Typography/Typography";
-import ImageLeft from "../../img/avatar-900.png";
+import ImageLeft from "../../img/main-next.png";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const text = [
@@ -17,42 +17,45 @@ const text = [
     "Сертифицированный специалист по современным методам развития мозга от Массачусетского университета",
 ]
 
+const newText = `
+<p>ПОЧЕМУ МНЕ ДОВЕРЯЮТ:<br />
+✅ Тройная экспертиза в одном лице:<br />
+<em>Врач-педиатр</em> | <em>Семейный психолог</em> | <em>Сертифицированный нейроспециалист (MIT)</em><em><br /></em>➜ Вижу здоровье, поведение и развитие как единую систему</p>
+<p>✅ Не теория, а проверенная практика:</p>
+<ul style="padding-left: 24px;">
+<li >1000+ успешных кейсов</li>
+<li >600 000+ родителей следят за моими методами</li>
+</ul>
+<p>✅ Создатель методики "Элитное развитие с пелёнок"</p>
+<p>✅ Бизнес-подход к развитию (MBA):<br />Четкие алгоритмы вместо &laquo;размытых советов&raquo;</p>
+<p>✅ Проверено на себе:<br />Мама 3 сыновей и бабушка 2 внуков &rarr; знаю реальные боли &laquo;из песочницы&raquo;</p>
+`
+
 export default function FirstScreen() {
     return (
         <Container component="section">
             <Grid container>
                 <Grid item xs={12} md={7}
-                      sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',   marginTop: {md: 0, sm: 3, xs: 2}, order: {md: 1, sm: 2, xs: 2}}}>
-                    <Typography gutterBottom sx={{marginTop: 2, display: {md: "flex", sm: "none", xs: "none"}}} className="top-mainSubTitle" >
-                        ваш эксперт в материнстве и развитии малыша
-                    </Typography>
+                      sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',   marginTop: {md: 0, sm: 3, xs: 2}, order: {md: 1, sm: 1, xs: 1}}}>
+
                     <Typography className="mainTitle">
                         Елена Корнева
                     </Typography>
-                    {text.map((item, index) => (
-                            <Grid container key={index} sx={{marginBottom:1}} className={"cardTitleOne size-common"}>
-                                <Grid item xs={1} display={"flex"} justifyContent={"center"} alignItems={"center"} >
-                                    <StarBorderIcon/>
-                                </Grid>
-                                <Grid item xs={11} display={"flex"} justifyContent={"flex-start"} alignItems={"center"} sx={{paddingLeft:1}}>
-                                    {item}
-                                </Grid>
-                            </Grid>
-                        )
-                    )
-                    }
+                    <Typography gutterBottom sx={{marginTop: 2, paddingX:2 }} className="top-mainSubTitle" >
+                      помогаю родителям раскрыть потенциал малыша через науку, любовь и систему
+                    </Typography>
+                    <Box  sx={{padding:2,   display: {md: "block", xs: 'none' } }}
+                          dangerouslySetInnerHTML={{__html: newText}}
+                    />
                 </Grid>
                 <Grid item xs={12} md={5} sx={{
                     display: "flex",
                     justifyContent: {md: 'flex-end', sm: 'center', xs: 'center'},
                     alignItems: {md: 'flex-end', sm: 'center', xs: 'center'},
-                    marginY: {md: 0, sm: 3, xs: 3},
-                    order: {md: 2, sm: 1, xs: 1},
+                    marginY: {md: 0, sm: 2, xs: 2},
+                    order: {md: 2, sm: 2, xs: 2},
                     flexDirection: "column"
                 }}>
-                    <Typography gutterBottom sx={{textAlign: "center", display: {md: "none", sm: "content", xs: "content"}}} className="top-mainSubTitle">
-                        ваш эксперт в материнстве и развитии малыша
-                    </Typography>
                     <Box
                         component="img"
                         src={ImageLeft}
@@ -61,6 +64,9 @@ export default function FirstScreen() {
                             width: '100%',
                             maxWidth: 400
                         }}
+                    />
+                    <Box  sx={{padding:2,     display: {md: "none", sm: 'block' } } }
+                          dangerouslySetInnerHTML={{__html: newText}}
                     />
                 </Grid>
             </Grid>

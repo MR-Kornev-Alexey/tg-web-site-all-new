@@ -73,7 +73,7 @@ export default function TimeLine() {
             subTitle: 'с <strong>вебинарами</strong>  по гармоничному  развитию малышей от 0 до 24 месяцев',
             description:
                 '<div >\n' +
-                '<h3>Авторские вебинары по гармоничному развитию детей от от 0 до 24 месяцев</h3> ' +
+                '<h3>Авторские вебинары по гармоничному развитию детей от 0 до 24 месяцев</h3> ' +
                 '<h3 >&nbsp;</h3>' +
                 '<ul>\n' +
                 '<li>Уникальные вебинары с простыми и&nbsp; понятными объяснениями сложных процессов детского развития</li>\n' +
@@ -187,7 +187,7 @@ export default function TimeLine() {
     return (
         <Container className={"box-center"}>
             {descriptionCourse.map((element, index) =>
-                <Card className={"card-timeline"}>
+                <Card className={"card-timeline"} key={index}>
                     <CardContent sx={{position: "relative"}}>
                         <Box sx={{display: "flex"}} justifyContent={"flex-start"} alignItems={"flex-start"}
                              flexDirection={"column"}>
@@ -218,24 +218,6 @@ export default function TimeLine() {
             )
             }
             <AlertDialogSlide isOpen={dialogOpen} closeDialog={closeDialog} text={dialogText}/>
-            <Grid container display={"flex"} justifyContent={"center"} alignItems={"center"} sx={{marginTop: 2}}>
-                <Grid item xs={12} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                    <Box className="top-mainSubTitle" sx={{marginTop: 1}} >Другие курсы </Box>
-                </Grid>
-                <Grid item xs={12} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-                    <Link href={"/course"} className={"btn-call"} sx={{
-                        maxWidth: 260,
-                        display: "flex",
-                        justifyContent: 'center',
-                        alignItems: "center",
-                        marginTop: {md: 2, sm: 2, xs: 2}
-                    }}>
-                        <ListAltIcon color={"#666666"}/> <Box className={"top-mainSubTitle"}
-                                                              sx={{marginLeft: 2}}>Перейти</Box>
-                    </Link>
-                </Grid>
-            </Grid>
-
         </Container>
     );
 }

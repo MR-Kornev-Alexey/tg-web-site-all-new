@@ -10,6 +10,8 @@ import Failed from "./components/BackPayment/Failed";
 import {StyledEngineProvider} from "@mui/material";
 import DrawerLeft from "./components/Drawer/anotherDrawer"
 import MainCourses from "./components/MainCourses/MainCourses"
+import MainConduct from "./components/MainConduct/MainConduct";
+import MainConsultation from "./components/MainConsultation/MainConsultation";
 
 function App() {
     return (
@@ -22,6 +24,8 @@ function App() {
             <Routes>
                 <Route index element={<Main />}/>
                 <Route path={'course'} element={<MainCourses/>}/>
+                <Route path={'consultation'} element={<MainConsultation/>}/>
+                <Route path={'conduct'} element={<MainConduct/>}/>
                 <Route path={'privacy'} element={<Privacy />}/>
                 <Route path={'terms'} element={<Terms />}/>
                 <Route path={'success'} element={<Success />}/>

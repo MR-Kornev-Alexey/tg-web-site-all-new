@@ -84,6 +84,8 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import CallUS from "../CallUs/CallUS";
 import Footer from "../Footer/Footer";
 import Consultation from "../Consultation/Consultation";
+import Conduct from "../Conduct/Conduct";
+import MiniCourses from "../MiniCourses/MiniCourses";
 
 
 const ScrollToTopButton = () => {
@@ -137,14 +139,20 @@ export default function Main() {
         <Box>
             {/*<Author/>*/}
             <FirstScreen/>
-            {/*<CountdownTimer />*/}
-            <LineBlock title={"Могу вам помочь"}/>
-            <TimeLine/>
-            {/*<ListHW />*/}
-            {/*<LineBlock title={"И если Вы:"}/>*/}
-            {/*<SecondListLeft />*/}
+            <LineBlock title={"Персональное ведение"}/>
+            <Conduct />
             <LineBlock title={"Консультация"}/>
             <Consultation />
+            {/*<CountdownTimer />*/}
+            <LineBlock title={"Мини курсы"}/>
+            <MiniCourses/>
+            <LineBlock title={"Полноформатные курсы"}/>
+            <TimeLine/>
+            {/*<ListHW />*/}
+            {/*/!*<LineBlock title={"И если Вы:"}/>*!/*/}
+            {/*<SecondListLeft />*/}
+
+
             {/*<SixWeek/>*/}
             {/*<LineBlock title={"Как работаем ?"}/>*/}
             {/*<HowWork />*/}

@@ -126,9 +126,6 @@ export default function MainCourses() {
         <Box>
             <LineBlock title={"Платные курсы"}/>
             <ListOfCourses/>
-            <LineBlock title={"Бесплатные курсы"}/>
-            <ListOfFreeCourses />
-
             <LineBlock title={"Отзывы"}/>
             <Slider imagesFrom={images}/>
             <LineBlock title={"Вопросы?"}/>

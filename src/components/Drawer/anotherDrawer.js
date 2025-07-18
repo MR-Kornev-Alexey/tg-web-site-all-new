@@ -87,12 +87,6 @@ export default function DrawerLeft() {
 
     const supportSupport = [
         {
-            id: 0,
-            title: "Поддержка",
-            icon: <Icon path={mdiMessageCogOutline} size={1}/>,
-            link: "https://t.me/mrk_service",
-        },
-        {
             id: 1,
             title: "Политика конфидициальности",
             icon: <Icon path={mdiNoteMultipleOutline} size={1}/>,
@@ -122,10 +116,10 @@ export default function DrawerLeft() {
         },
         {
             id: 2,
-            title: "Команда",
+            title: "Ведение",
             icon: <Icon path={mdiAccountMultiple} size={1}/>,
             checkStar: false,
-            link: "/sections"
+            link: "/conduct"
         },
         {
             id: 3,
@@ -133,20 +127,6 @@ export default function DrawerLeft() {
             icon: <Icon path={mdiLaptopAccount} size={1}/>,
             checkStar: true,
             link: "/consultation"
-        },
-        {
-            id: 4,
-            title: "Бесплатные уроки",
-            icon: <Icon path={mdiAccountSchoolOutline} size={1}/>,
-            checkStar: true,
-            link: "/free_lessons"
-        },
-        {
-            id: 5,
-            title: "Полезное для мам",
-            icon: <Icon path={mdiHumanBabyChangingTable} size={1}/>,
-            checkStar: true,
-            link: "/guides_mom"
         }
     ]
 

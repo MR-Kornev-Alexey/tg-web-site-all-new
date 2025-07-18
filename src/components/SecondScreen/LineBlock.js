@@ -13,7 +13,7 @@ export default function LineBlock({title}) {
         <ThemeProvider theme={defaultTheme}>
             <CssBaseline />
             {/* Hero unit */}
-            <Container disableGutters maxWidth="md" sx={{ pt: 4, pb: 2 }}>
+            <Container disableGutters maxWidth="md" sx={{ pt: 4, pb: 2 , px:1}}>
                 <Typography
                     component="h2"
                     variant="h2"

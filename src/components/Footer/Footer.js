@@ -41,12 +41,12 @@ const footers = [
             {
                 id: 0,
                 text: 'WhatsApp',
-                link: 'https://wa.me/4917625187846?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5...'
+                link: 'https://wa.me/79253114131?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5...'
             },
             {
                 id: 1,
                 text: 'Telegram',
-                link: 'https://t.me/korneva_elena'
+                link: 'https://t.me/MrkDigital'
             },
             {
                 id: 2,
