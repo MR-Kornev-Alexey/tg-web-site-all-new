@@ -53,7 +53,6 @@ const footers = [
                 text: 'info@mrk.digital',
                 link: 'mailto:info@mrk.digital'
             },
-
         ],
     },
     {
@@ -65,14 +64,34 @@ const footers = [
                 link: '/privacy'
             },
             {
-                id: 2,
+                id: 1,
                 text: 'Пользовательское соглашение',
                 link: '/terms'
             },
-
         ],
     },
-]
+    {
+        title: 'Полезное',
+        description: [
+            {
+                id: 1,
+                text: 'Курсы',
+                link: '/course'
+            },
+            {
+                id: 3,
+                text: 'Мини-курсы',
+                link: '/mini-course'
+            },
+            {
+                id: 2,
+                text: 'Манифест',
+                link: '/manifest'
+            },
+        ],
+    },
+];
+
 export default function Footer() {
 
     return (

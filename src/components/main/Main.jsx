@@ -86,6 +86,9 @@ import Footer from "../Footer/Footer";
 import Consultation from "../Consultation/Consultation";
 import Conduct from "../Conduct/Conduct";
 import MiniCourses from "../MiniCourses/MiniCourses";
+import OneToOneBlock from "../OneToOneBlock/OneToOneBlock";
+import TwoPathsBlock from "../TwoPathsBlock/TwoPathsBlock";
+import TwoWayMethodsBlock from "../OneToOneBlock/TwoWayMethodsBlock";
 
 
 const ScrollToTopButton = () => {
@@ -139,15 +142,16 @@ export default function Main() {
         <Box>
             {/*<Author/>*/}
             <FirstScreen/>
-            <LineBlock title={"Персональное ведение"}/>
-            <Conduct />
-            <LineBlock title={"Консультация"}/>
-            <Consultation />
+            <OneToOneBlock/>
+            <TwoPathsBlock/>
+            <TwoWayMethodsBlock />
+            {/*<LineBlock title={"Консультация"}/>*/}
+            {/*<Consultation />*/}
+            {/*<LineBlock title={"Персональное ведение"}/>*/}
+            {/*<Conduct />*/}
             {/*<CountdownTimer />*/}
-            <LineBlock title={"Мини курсы"}/>
-            <MiniCourses/>
-            <LineBlock title={"Полноформатные курсы"}/>
-            <TimeLine/>
+            {/*<LineBlock title={"Мини курсы"}/>*/}
+            {/*<MiniCourses/>*/}
             {/*<ListHW />*/}
             {/*/!*<LineBlock title={"И если Вы:"}/>*!/*/}
             {/*<SecondListLeft />*/}
@@ -156,12 +160,12 @@ export default function Main() {
             {/*<SixWeek/>*/}
             {/*<LineBlock title={"Как работаем ?"}/>*/}
             {/*<HowWork />*/}
-            <LineBlock title={"Остались вопросы?"}/>
-            <CallUS/>
+
             <LineBlock title={"Отзывы"}/>
             <Slider imagesFrom={images}/>
             {/*<LineBlock title={"Программа курса"}/>*/}
-
+            <LineBlock title={"Остались вопросы?"}/>
+            <CallUS/>
             {/*<LineBlock title={"Елена Корнева"}/>*/}
 
             {/*<LineBlock title={"Тарифы"}/>*/}

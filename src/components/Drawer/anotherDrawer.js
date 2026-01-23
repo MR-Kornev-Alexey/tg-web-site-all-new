@@ -25,12 +25,12 @@ import {
     mdiListBoxOutline,
     mdiNoteMultipleOutline,
     mdiFileDocumentCheckOutline,
-    mdiHumanBabyChangingTable,
-    mdiAccountSchoolOutline
 } from "@mdi/js";
 
 import "./Drawer.css"
 import {Link} from "@mui/material";
+import TelegramIcon from '@mui/icons-material/Telegram';
+
 
 const drawerWidth = 240;
 
@@ -108,11 +108,11 @@ export default function DrawerLeft() {
             checkStar: false
         },
         {
-            id: 1,
-            title: "Курсы",
-            icon: <Icon path={mdiListBoxOutline} size={1}/>,
-            checkStar: false,
-            link: "/course"
+            id: 3,
+            title: "Консультация",
+            icon: <Icon path={mdiLaptopAccount} size={1}/>,
+            checkStar: true,
+            link: "/consultation"
         },
         {
             id: 2,
@@ -122,11 +122,25 @@ export default function DrawerLeft() {
             link: "/conduct"
         },
         {
-            id: 3,
-            title: "Консультация",
-            icon: <Icon path={mdiLaptopAccount} size={1}/>,
-            checkStar: true,
-            link: "/consultation"
+            id: 1,
+            title: "Курсы",
+            icon: <Icon path={mdiListBoxOutline} size={1}/>,
+            checkStar: false,
+            link: "/course"
+        },
+        {
+            id: 2,
+            title: "Мини-курсы",
+            icon: <Icon path={mdiListBoxOutline} size={1}/>,
+            checkStar: false,
+            link: "mini-course"
+        },
+        {
+            id: 5,
+            title: "Зачем я веду блог",
+            icon: <Icon path={mdiListBoxOutline} size={1}/>,
+            checkStar: false,
+            link: "manifest"
         }
     ]
 
@@ -152,7 +166,46 @@ export default function DrawerLeft() {
                     >
                         <MenuIcon/>
                     </IconButton>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <Link
+                        href="https://t.me/MrkDigital?text=Запрос формата работы"
+                        target="_blank"
+                        underline="none"
+                        sx={{
+                            maxWidth: { xs: 44, sm: 260 },
+                            height: { xs: 44, sm: 40 },
+                            px: { xs: 1, sm: 2 },
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: { xs: 0, sm: 1 },
+                            backgroundColor: '#f5f5f5',
+                            color: '#666',
+                            transition: 'all .2s ease',
+                            whiteSpace: 'nowrap',
 
+                            '&:hover': {
+                                backgroundColor: '#eaeaea',
+                                textDecoration: 'none',
+                            },
+                        }}
+                    >
+                        <TelegramIcon
+                            sx={{
+                                fontSize: { xs: 20, sm: 22 },
+                            }}
+                        />
+
+                        <Box
+                            sx={{
+                                display: { xs: 'none', sm: 'block' },
+                                fontSize: { sm: 14 },
+                                fontWeight: 500,
+                            }}
+                        >
+                            Запросить формат работы
+                        </Box>
+                    </Link>
                 </Toolbar>
             </AppBar>
             <Drawer

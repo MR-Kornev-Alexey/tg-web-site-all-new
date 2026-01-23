@@ -72,6 +72,7 @@ import CallUS from "../CallUs/CallUS";
 import Footer from "../Footer/Footer";
 import Consultation from "../Consultation/Consultation";
 import ListOfFreeCourses from "../ListOfCourses/ListOfFreeCourses";
+import MiniCourses from "../MiniCourses/MiniCourses";
 
 
 
@@ -124,8 +125,10 @@ const ScrollToTopButton = () => {
 export default function MainCourses() {
     return (
         <Box>
-            <LineBlock title={"Платные курсы"}/>
+            <LineBlock title={"Курсы"}/>
             <ListOfCourses/>
+            <LineBlock title={"Мини курсы"}/>
+            <MiniCourses/>
             <LineBlock title={"Отзывы"}/>
             <Slider imagesFrom={images}/>
             <LineBlock title={"Вопросы?"}/>

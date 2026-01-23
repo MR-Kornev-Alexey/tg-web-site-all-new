@@ -12,6 +12,9 @@ import DrawerLeft from "./components/Drawer/anotherDrawer"
 import MainCourses from "./components/MainCourses/MainCourses"
 import MainConduct from "./components/MainConduct/MainConduct";
 import MainConsultation from "./components/MainConsultation/MainConsultation";
+import MainMiniCourses from "./components/MiniCourses/MainMiniCourses";
+import DevelopmentPhilosophy from "./components/Manifest/Manifest";
+import MainManifest from "./components/Manifest/MainManifest";
 
 function App() {
     return (
@@ -24,6 +27,8 @@ function App() {
             <Routes>
                 <Route index element={<Main />}/>
                 <Route path={'course'} element={<MainCourses/>}/>
+                <Route path={'mini-course'} element={<MainMiniCourses/>}/>
+                <Route path={'manifest'} element={<MainManifest/>}/>
                 <Route path={'consultation'} element={<MainConsultation/>}/>
                 <Route path={'conduct'} element={<MainConduct/>}/>
                 <Route path={'privacy'} element={<Privacy />}/>
