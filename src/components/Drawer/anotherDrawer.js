@@ -24,7 +24,7 @@ import {
     mdiAccountMultiple,
     mdiListBoxOutline,
     mdiNoteMultipleOutline,
-    mdiFileDocumentCheckOutline,
+    mdiFileDocumentCheckOutline, mdiShieldAccount, mdiFileDocument, mdiAccountLock, mdiGavel, mdiClipboardCheck,
 } from "@mdi/js";
 
 import "./Drawer.css"
@@ -88,17 +88,45 @@ export default function DrawerLeft() {
     const supportSupport = [
         {
             id: 1,
-            title: "Политика конфидициальности",
-            icon: <Icon path={mdiNoteMultipleOutline} size={1}/>,
+            title: "Политика конфиденциальности",
+            icon: <Icon path={mdiShieldAccount} size={1} />,
             link: "/privacy",
+            color: "#1976d2", // синий
+            description: "Правила обработки и защиты персональных данных"
         },
         {
             id: 2,
             title: "Пользовательское соглашение",
-            icon: <Icon path={mdiFileDocumentCheckOutline} size={1}/>,
+            icon: <Icon path={mdiFileDocument} size={1} />,
             link: "/terms",
+            color: "#2e7d32", // зеленый
+            description: "Условия использования сайта и услуг"
+        },
+        {
+            id: 3,
+            title: "Согласие на обработку персональных данных",
+            icon: <Icon path={mdiAccountLock} size={1} />,
+            link: "/personal",
+            color: "#ed6c02", // оранжевый
+            description: "Форма согласия на обработку данных"
+        },
+        {
+            id: 4,
+            title: "Публичная оферта",
+            icon: <Icon path={mdiGavel} size={1} />,
+            link: "/offer",
+            color: "#9c27b0", // фиолетовый
+            description: "Договор на оказание консультационных услуг"
+        },
+        {
+            id: 5,
+            title: "Правила оказания услуг",
+            icon: <Icon path={mdiClipboardCheck} size={1} />,
+            link: "/service-rules",
+            color: "#d32f2f", // красный
+            description: "Условия и порядок предоставления услуг"
         }
-    ]
+    ];
     const supportMain = [
         {
             id: 0,

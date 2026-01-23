@@ -21,6 +21,8 @@ import ImageBF from "../../img/black-friday.png";
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import RemoveDoneIcon from '@mui/icons-material/RemoveDone';
 import TelegramIcon from "@mui/icons-material/Telegram";
+import Icon from "@mdi/react";
+import {mdiFileDocumentCheckOutline} from "@mdi/js";
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -68,6 +70,21 @@ const footers = [
                 text: 'Пользовательское соглашение',
                 link: '/terms'
             },
+            {
+                id: 3,
+                text: "Согласие на обработку персональных данных",
+                link: "/personal",
+            },
+            {
+                id: 4,
+                text: "Публичная оферта",
+                link: "/offer",
+            },
+            {
+                id: 5,
+                text: "Правила оказания услуг",
+                link: "/service-rules",
+            }
         ],
     },
     {

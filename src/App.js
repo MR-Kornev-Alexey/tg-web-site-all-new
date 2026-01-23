@@ -15,6 +15,11 @@ import MainConsultation from "./components/MainConsultation/MainConsultation";
 import MainMiniCourses from "./components/MiniCourses/MainMiniCourses";
 import DevelopmentPhilosophy from "./components/Manifest/Manifest";
 import MainManifest from "./components/Manifest/MainManifest";
+import TermsNew from "./components/Terms/Terms";
+import Offer from "./components/Offer/Offer";
+import PrivacyPolicyPage from "./components/Privacy/Privacy";
+import ConsentTextDisplay from "./components/PersonalData/PerconalData";
+import ServiceRules from "./components/RulesOfService/RulesOfService";
 
 function App() {
     return (
@@ -31,9 +36,12 @@ function App() {
                 <Route path={'manifest'} element={<MainManifest/>}/>
                 <Route path={'consultation'} element={<MainConsultation/>}/>
                 <Route path={'conduct'} element={<MainConduct/>}/>
-                <Route path={'privacy'} element={<Privacy />}/>
-                <Route path={'terms'} element={<Terms />}/>
+                <Route path={'privacy'} element={<PrivacyPolicyPage />}/>
+                <Route path={'terms'} element={<TermsNew />}/>
+                <Route path={'offer'} element={<Offer/>}/>
                 <Route path={'success'} element={<Success />}/>
+                <Route path={'personal'} element={<ConsentTextDisplay />}/>
+                <Route path={'service-rules'} element={<ServiceRules />}/>
                 <Route path={'failed'} element={<Failed />}/>
             </Routes>
         </div>

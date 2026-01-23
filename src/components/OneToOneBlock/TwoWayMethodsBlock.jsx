@@ -22,7 +22,8 @@ export default function TwoWayMethodsBlock() {
                 >
                     Два способа работать со мной.<br/>
                     <Box component="span" sx={{ color: '#666', fontSize: '0.9em' }}>
-                        Общее — глубина. Разное — масштаб задачи.
+                        Общее — глубина<br/>
+                        Разное — масштаб задачи.
                     </Box>
                 </Typography>
 
