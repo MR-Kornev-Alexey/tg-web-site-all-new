@@ -1,10 +1,7 @@
 import './App.css';
 import * as React from 'react';
-import {useEffect} from "react";
 import {Route, Routes} from 'react-router-dom'
 import Main from "./components/main/Main"
-import Privacy from "./components/Legal/Privacy";
-import Terms from "./components/Legal/Terms";
 import Success from "./components/BackPayment/Success";
 import Failed from "./components/BackPayment/Failed";
 import {StyledEngineProvider} from "@mui/material";

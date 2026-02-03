@@ -1,68 +1,38 @@
-import React, {useEffect, useState} from 'react';
-import {createTheme, ThemeProvider} from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
+import React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import StarIcon from '@mui/icons-material/StarBorder';
-import Toolbar from '@mui/material/Toolbar';
+import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import Container from '@mui/material/Container';
-import ModalPayment from "../Modal/ModalPayment";
-import ModalBF from "../Modal/ModalBF"
-import ImageBF from "../../img/black-friday.png";
-import DoneAllIcon from '@mui/icons-material/DoneAll';
-import RemoveDoneIcon from '@mui/icons-material/RemoveDone';
-import TelegramIcon from "@mui/icons-material/Telegram";
-import Icon from "@mdi/react";
-import {mdiFileDocumentCheckOutline} from "@mdi/js";
-function Copyright(props) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://mrk.digital/">
-                Mrk.Digital
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
-const defaultTheme = createTheme();
+import Divider from '@mui/material/Divider';
+
 const footers = [
     {
         title: 'Контакты',
         description: [
             {
                 id: 0,
-                text: 'WhatsApp',
-                link: 'https://wa.me/79253114131?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5...'
-            },
-            {
-                id: 1,
                 text: 'Telegram',
                 link: 'https://t.me/MrkDigital'
             },
             {
+                id: 1,
+                text: 'info@elenakorneva.ru',
+                link: 'mailto:info@elenakorneva.ru'
+            },
+            {
                 id: 2,
-                text: 'info@mrk.digital',
-                link: 'mailto:info@mrk.digital'
+                text: 'Работаем по всему миру',
+                link: null
             },
         ],
     },
     {
-        title: 'Положения',
+        title: 'Документы',
         description: [
             {
                 id: 0,
-                text: 'Политика конфидициальности',
+                text: 'Политика конфиденциальности',
                 link: '/privacy'
             },
             {
@@ -71,27 +41,32 @@ const footers = [
                 link: '/terms'
             },
             {
-                id: 3,
-                text: "Согласие на обработку персональных данных",
-                link: "/personal",
-            },
-            {
-                id: 4,
+                id: 2,
                 text: "Публичная оферта",
                 link: "/offer",
             },
             {
-                id: 5,
+                id: 3,
                 text: "Правила оказания услуг",
                 link: "/service-rules",
             }
         ],
     },
     {
-        title: 'Полезное',
+        title: 'Экспертиза',
         description: [
             {
+                id: 0,
+                text: 'Консультация',
+                link: '/consultation'
+            },
+            {
                 id: 1,
+                text: 'Ведение',
+                link: '/conduct'
+            },
+            {
+                id: 2,
                 text: 'Курсы',
                 link: '/course'
             },
@@ -100,56 +75,154 @@ const footers = [
                 text: 'Мини-курсы',
                 link: '/mini-course'
             },
-            {
-                id: 2,
-                text: 'Манифест',
-                link: '/manifest'
-            },
         ],
     },
 ];
 
-export default function Footer() {
-
+function Copyright() {
     return (
-        <ThemeProvider theme={defaultTheme}>
-            <CssBaseline/>
-            <Container
-                maxWidth="md"
-                component="footer"
+        <Box sx={{ mt: 4, textAlign: 'center' }}>
+            <Typography
+                variant="caption"
                 sx={{
-                    borderTop: (theme) => `1px solid ${theme.palette.divider}`,
-                    mt: 4,
-                    paddingLeft: 4,
-                    paddingRight: 4
+                    color: 'rgba(166, 124, 82, 0.6)',
+                    fontSize: '0.8rem',
+                    display: 'block'
                 }}
             >
-                <Grid container spacing={4} justifyContent="space-evenly" sx={{
-                    fontSize: 13
-                }}>
+                © {new Date().getFullYear()} Элита с пеленок
+            </Typography>
+            <Typography
+                variant="caption"
+                sx={{
+                    color: 'rgba(166, 124, 82, 0.4)',
+                    fontSize: '0.7rem',
+                    display: 'block',
+                    mt: 0.5
+                }}
+            >
+                Все права защищены
+            </Typography>
+        </Box>
+    );
+}
+
+export default function Footer() {
+    return (
+        <Box
+            component="footer"
+            sx={{
+                py: 6,
+                position: 'relative',
+                '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '1px',
+                    background: 'linear-gradient(90deg, transparent, rgba(166, 124, 82, 0.2), transparent)'
+                }
+            }}
+        >
+            <Container maxWidth="lg">
+                <Grid container spacing={4} justifyContent="center">
                     {footers.map((footer) => (
-                        <Grid item xs={6} sm={3} key={footer.title}>
-                            <Typography variant="h6" color="text.primary" gutterBottom sx={{
-                                fontSize: 13
-                            }}>
+                        <Grid item xs={12} sm={6} md={4} key={footer.title}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    color: '#3E2F28',
+                                    fontWeight: 600,
+                                    fontSize: '1rem',
+                                    mb: 2,
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.5px'
+                                }}
+                            >
                                 {footer.title}
                             </Typography>
-                            <ul>
+                            <Box component="ul" sx={{ p: 0, m: 0, listStyle: 'none' }}>
                                 {footer.description.map((item) => (
-                                    <li key={item.id}>
-                                        <Link href={item.link} variant="subtitle1" color="text.secondary" sx={{
-                                            fontSize: 13
-                                        }}>
-                                            {item.text}
-                                        </Link>
-                                    </li>
+                                    <Box component="li" key={item.id} sx={{ mb: 1.5 }}>
+                                        {item.link ? (
+                                            <Link
+                                                href={item.link}
+                                                underline="none"
+                                                sx={{
+                                                    color: '#A67C52',
+                                                    fontSize: '0.9rem',
+                                                    fontWeight: 400,
+                                                    transition: 'all 0.2s ease',
+                                                    display: 'inline-block',
+                                                    '&:hover': {
+                                                        color: '#D95D2B',
+                                                        transform: 'translateX(4px)'
+                                                    }
+                                                }}
+                                            >
+                                                {item.text}
+                                            </Link>
+                                        ) : (
+                                            <Typography
+                                                sx={{
+                                                    color: 'rgba(166, 124, 82, 0.6)',
+                                                    fontSize: '0.9rem',
+                                                    fontStyle: 'italic'
+                                                }}
+                                            >
+                                                {item.text}
+                                            </Typography>
+                                        )}
+                                    </Box>
                                 ))}
-                            </ul>
+                            </Box>
                         </Grid>
                     ))}
                 </Grid>
-                <Copyright sx={{mt: 5, fontSize: 13}}/>
+
+                <Divider sx={{
+                    my: 4,
+                    borderColor: 'rgba(166, 124, 82, 0.1)',
+                    opacity: 0.5
+                }} />
+
+                {/* Контактная информация */}
+                <Box sx={{
+                    textAlign: 'center',
+                    mb: 4,
+                    p: 3,
+                    backgroundColor: 'rgba(166, 124, 82, 0.03)',
+                    borderRadius: 2,
+                    border: '1px solid rgba(166, 124, 82, 0.1)'
+                }}>
+                    <Typography
+                        sx={{
+                            color: '#3E2F28',
+                            fontSize: '0.95rem',
+                            mb: 2,
+                            fontWeight: 500
+                        }}
+                    >
+                        Экспертное сопровождение семей с 2015 года
+                    </Typography>
+                    <Typography
+                        sx={{
+                            color: '#A67C52',
+                            fontSize: '0.85rem',
+                            lineHeight: 1.5,
+                            maxWidth: '600px',
+                            mx: 'auto',
+                            fontStyle: 'italic'
+                        }}
+                    >
+                        Специализация: нейрофизиологическое развитие детей от 0 до 7 лет,
+                        системный подход к воспитанию, семейная психология
+                    </Typography>
+                </Box>
+
+                <Copyright />
             </Container>
-        </ThemeProvider>
-    )
+        </Box>
+    );
 }

@@ -1,500 +1,564 @@
 import React from 'react';
 import {
-    Container, Box, Typography, Grid, Paper,
-    List, ListItem, ListItemIcon, ListItemText,
-    useTheme, useMediaQuery
+    Box,
+    Container,
+    Typography,
+    Paper,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    Divider,
+    useTheme,
+    useMediaQuery,
+    Grid
 } from '@mui/material';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import SchoolIcon from '@mui/icons-material/School';
 import PsychologyIcon from '@mui/icons-material/Psychology';
-import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
-import PersonIcon from '@mui/icons-material/Person';
+import ScienceIcon from '@mui/icons-material/Science';
+import SchoolIcon from '@mui/icons-material/School';
+import LayersIcon from '@mui/icons-material/Layers';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import CancelIcon from '@mui/icons-material/Cancel';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
-export default function DevelopmentPhilosophy() {
+export default function Manifesto() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-    const notDoingList = [
-        "Не переделываю детей под шаблон",
-        "Не работаю «для всех» — только для осознанных родителей",
-        "Не беру тех, кто не готов смотреть в будущее",
-        "Не работаю с родителями, которые ждут «волшебную таблетку»",
-        "Не пугаю страшными последствиями ради мотивации",
-        "Не упрощаю ради массового понимания",
-        "Не использую шаблонные методики и «тренды» воспитания"
-    ];
-
-    const beliefList = [
-        "Любой ребёнок в чём-то гениален",
-        "Синхронизацию физиологическую: мать = ребёнок",
-        "Начать можно в любом возрасте",
-        "В науку и доказательные методы",
-        "В интеллект как инструмент развития",
-        "В пластичность мозга на протяжении всей жизни"
-    ];
-
-    const systemLevels = [
+    const notWorkingWith = [
         {
-            level: 1,
-            title: "НАВЫКИ",
-            subtitle: "То, что видно снаружи",
-            items: [
-                "Нейродинамика и нейрокоординация",
-                "Стрессоустойчивость",
-                "Считывание эмоций",
-                "Управление стрессом",
-                "Нестандартное мышление и креативность",
-                "Расширение градации восприятия"
-            ],
-            parentTransform: "Трансформация родителя: принятие ребёнка как отдельной личности и себя в роли родителя",
-            icon: <SchoolIcon />
+            icon: <CancelIcon />,
+            text: "Вы ищете «ремонт» ребенка. Я не переделываю детей под шаблон и не исправляю «неудобное» поведение ради комфорта взрослых."
         },
         {
-            level: 2,
+            icon: <CancelIcon />,
+            text: "Вам нужна «волшебная таблетка». Моя система требует включенности. Если вы ждете, что изменения произойдут без вашего участия — это не ко мне."
+        },
+        {
+            icon: <CancelIcon />,
+            text: "Вы живете в горизонте одного дня. Моя экспертиза — для тех, кто готов инвестировать усилия сегодня, чтобы получить плоды через 5, 10 и 20 лет."
+        },
+        {
+            icon: <CancelIcon />,
+            text: "Вы ищете упрощений. Я не адаптирую научные данные под «массовый вкус». Родительство уровня ВУЗа требует интеллектуального усилия."
+        }
+    ];
+
+    const foundationPrinciples = [
+        {
+            icon: <EmojiObjectsIcon />,
+            title: "Гениальность как данность",
+            text: "Я убеждена: каждый ребенок талантлив, если среда не блокирует его потенциал."
+        },
+        {
+            icon: <PsychologyIcon />,
+            title: "Биологическая синхронность",
+            text: "Мы учитываем нейрофизиологическую связь: состояние родителя напрямую проектирует состояние ребенка."
+        },
+        {
+            icon: <ScienceIcon />,
+            title: "Научный фундамент",
+            text: "В основе системы — доказательная медицина, нейропсихология и глубокое понимание пластичности мозга."
+        },
+        {
+            icon: <SchoolIcon />,
+            title: "Интеллект как рычаг",
+            text: "Мы используем осознанность и логику как главные инструменты развития семейной системы."
+        }
+    ];
+
+    const architectureLevels = [
+        {
+            level: "1",
+            title: "БАЗИС",
+            subtitle: "Навыки и нейродинамика",
+            description: "То, что видно снаружи. Координация, стрессоустойчивость и трансформация родителя: переход от «владения» ребенком к принятию его как отдельной личности.",
+            color: "rgba(166, 124, 82, 0.2)" // Saddle Tan
+        },
+        {
+            level: "2",
             title: "МЕТАНАВЫКИ",
-            subtitle: "То, как ребёнок справляется с миром",
-            items: [
-                "Саморегуляция",
-                "Внимание и концентрация",
-                "Гибкость мышления",
-                "Способность выдерживать фрустрацию"
-            ],
-            parentTransform: "Формируются не упражнениями, а средой. Здесь решается: переходит ли истерика в рост или застревает на месте",
-            icon: <PsychologyIcon />
+            subtitle: "Взаимодействие с миром",
+            description: "Саморегуляция и внимание. Здесь решается: станет ли кризис точкой роста или застрянет в хронической истерике.",
+            color: "rgba(166, 124, 82, 0.3)" // Saddle Tan более насыщенный
         },
         {
-            level: 3,
+            level: "3",
             title: "ХАРАКТЕР",
-            subtitle: "То, кем ребёнок становится в сложных моментах",
-            items: [
-                "Тренировка в реальных ситуациях",
-                "Развитие в состоянии дозированного стресса",
-                "Формирование волевых качеств"
-            ],
-            parentTransform: "",
-            icon: <EmojiEmotionsIcon />
+            subtitle: "Воля",
+            description: "Формирование стержня через дозированный стресс и реальный опыт. То, кем ребенок становится в сложные моменты.",
+            color: "rgba(217, 93, 43, 0.2)" // Signature Orange
         },
         {
-            level: 4,
+            level: "4",
             title: "ЛИЧНОСТЬ",
-            subtitle: "То, что остаётся, когда нет контроля",
-            items: [
-                "Тренировка в социуме",
-                "Автономия и самоидентификация",
-                "Ценностные ориентиры"
-            ],
-            parentTransform: "",
-            icon: <PersonIcon />
+            subtitle: "Автономия",
+            description: "Ценностные ориентиры и самоидентификация. То, что остается в человеке, когда над ним больше нет вашего контроля.",
+            color: "rgba(217, 93, 43, 0.3)" // Signature Orange более насыщенный
         }
     ];
 
     return (
-        <Container component="section" sx={{
-            py: { xs: 6, md: 10 },
-            backgroundColor: '#fafafa'
+        <Box sx={{
+            backgroundColor: '#FCF9F3', // Silk Parchment
+            py: { xs: 8, md: 12 },
+            minHeight: '100vh',
+            position: 'relative'
         }}>
-            {/* Основной заголовок */}
+            {/* Декоративные элементы */}
             <Box sx={{
-                maxWidth: 800,
-                mx: 'auto',
-                mb: 6,
-                textAlign: 'center',
-                px: { xs: 2, md: 0 }
-            }}>
-                <Typography
-                    component="h2"
-                    sx={{
-                        fontSize: { xs: 28, md: 36 },
-                        fontWeight: 600,
-                        lineHeight: 1.2,
-                        mb: 3,
-                        textTransform: 'uppercase',
-                        letterSpacing: '-0.02em'
-                    }}
-                >
-                    О развитии детей<br/>и взрослых, которые рядом
-                </Typography>
+                position: 'absolute',
+                top: 100,
+                right: 100,
+                width: '200px',
+                height: '200px',
+                background: 'radial-gradient(circle, rgba(217,93,43,0.03) 0%, transparent 70%)',
+                zIndex: 0,
+                [theme.breakpoints.down('md')]: {
+                    display: 'none'
+                }
+            }} />
 
-                <Typography
-                    sx={{
-                        fontSize: { xs: 16, md: 18 },
-                        lineHeight: 1.7,
-                        color: '#444',
-                        fontStyle: 'italic',
-                        mb: 4
-                    }}
-                >
-                    Я не верю в идеальных родителей.<br/>
-                    И не работаю с теми, кто хочет «исправить ребёнка».<br/>
-                    Я работаю с теми, кто готов стать опорой.
-                </Typography>
-
-                <Typography
-                    sx={{
-                        fontSize: { xs: 15, md: 17 },
-                        lineHeight: 1.6,
-                        color: '#555'
-                    }}
-                >
-                    Потому что развитие — это не чек-лист.<br/>
-                    И воспитание — не набор приёмов.<br/>
-                    Это система. И она всегда начинается со взрослого.
-                </Typography>
-            </Box>
-
-            {/* Сетка: Что не делаю vs Во что верю */}
-            <Grid container spacing={4} sx={{ mb: 8 }}>
-                {/* Левая колонка: Что я НЕ делаю */}
-                <Grid item xs={12} md={6}>
-                    <Paper elevation={0} sx={{
-                        p: { xs: 3, md: 4 },
-                        height: '100%',
-                        border: '1px solid #ffebee',
-                        backgroundColor: '#fff5f5'
-                    }}>
-                        <Box sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            mb: 3,
-                            color: '#d32f2f'
-                        }}>
-                            <HighlightOffIcon sx={{ mr: 1.5, fontSize: 28 }} />
-                            <Typography
-                                component="h3"
-                                sx={{
-                                    fontSize: 20,
-                                    fontWeight: 600,
-                                    textTransform: 'uppercase'
-                                }}
-                            >
-                                Что я НЕ делаю
-                            </Typography>
-                        </Box>
-
-                        <List dense>
-                            {notDoingList.map((item, index) => (
-                                <ListItem
-                                    key={index}
-                                    sx={{
-                                        py: 1,
-                                        borderBottom: '1px solid #ffeaea',
-                                        '&:last-child': { borderBottom: 0 }
-                                    }}
-                                >
-                                    <ListItemIcon sx={{ minWidth: 36 }}>
-                                        <Box sx={{
-                                            width: 20,
-                                            height: 20,
-                                            borderRadius: '50%',
-                                            backgroundColor: '#ffebee',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center'
-                                        }}>
-                                            <HighlightOffIcon sx={{ fontSize: 14, color: '#d32f2f' }} />
-                                        </Box>
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={item}
-                                        primaryTypographyProps={{
-                                            fontSize: 15,
-                                            color: '#5d4037'
-                                        }}
-                                    />
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Paper>
-                </Grid>
-
-                {/* Правая колонка: Во что я верю */}
-                <Grid item xs={12} md={6}>
-                    <Paper elevation={0} sx={{
-                        p: { xs: 3, md: 4 },
-                        height: '100%',
-                        border: '1px solid #e8f5e9',
-                        backgroundColor: '#f1f8e9'
-                    }}>
-                        <Box sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            mb: 3,
-                            color: '#388e3c'
-                        }}>
-                            <CheckCircleOutlineIcon sx={{ mr: 1.5, fontSize: 28 }} />
-                            <Typography
-                                component="h3"
-                                sx={{
-                                    fontSize: 20,
-                                    fontWeight: 600,
-                                    textTransform: 'uppercase'
-                                }}
-                            >
-                                Во что я верю
-                            </Typography>
-                        </Box>
-
-                        <List dense>
-                            {beliefList.map((item, index) => (
-                                <ListItem
-                                    key={index}
-                                    sx={{
-                                        py: 1,
-                                        borderBottom: '1px solid #e8f5e9',
-                                        '&:last-child': { borderBottom: 0 }
-                                    }}
-                                >
-                                    <ListItemIcon sx={{ minWidth: 36 }}>
-                                        <Box sx={{
-                                            width: 20,
-                                            height: 20,
-                                            borderRadius: '50%',
-                                            backgroundColor: '#e8f5e9',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center'
-                                        }}>
-                                            <CheckCircleOutlineIcon sx={{ fontSize: 14, color: '#388e3c' }} />
-                                        </Box>
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={item}
-                                        primaryTypographyProps={{
-                                            fontSize: 15,
-                                            color: '#33691e'
-                                        }}
-                                    />
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Paper>
-                </Grid>
-            </Grid>
-
-            {/* Система развития */}
-            <Box sx={{ mb: 10 }}>
-                <Box sx={{
-                    maxWidth: 800,
-                    mx: 'auto',
-                    mb: 5,
-                    textAlign: 'center',
-                    px: { xs: 2, md: 0 }
-                }}>
+            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+                {/* Главный заголовок */}
+                <Box sx={{ textAlign: 'center', mb: 8 }}>
                     <Typography
-                        component="h2"
+                        variant="h1"
                         sx={{
-                            fontSize: { xs: 28, md: 32 },
-                            fontWeight: 600,
-                            lineHeight: 1.2,
+                            fontSize: { xs: '2.2rem', md: '3rem' },
+                            fontWeight: 300,
+                            color: '#3E2F28', // Bitter Chocolate
                             mb: 2,
-                            textTransform: 'uppercase',
-                            letterSpacing: '-0.02em'
+                            lineHeight: 1.1
                         }}
                     >
-                        МОЯ СИСТЕМА РАЗВИТИЯ
+                        Манифест осознанной позиции
+                    </Typography>
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            fontSize: { xs: '1.2rem', md: '1.5rem' },
+                            fontWeight: 400,
+                            color: '#A67C52', // Saddle Tan
+                            fontStyle: 'italic',
+                            mb: 4
+                        }}
+                    >
+                        О развитии детей и взрослых, которые рядом
                     </Typography>
 
-                    <Typography
-                        sx={{
-                            fontSize: { xs: 16, md: 18 },
-                            lineHeight: 1.6,
-                            color: '#444',
-                            mb: 1
-                        }}
-                    >
-                        4 уровня, которые нельзя перескакивать
-                    </Typography>
-
-                    <Typography
-                        sx={{
-                            fontSize: 15,
-                            lineHeight: 1.6,
-                            color: '#666',
-                            fontStyle: 'italic'
-                        }}
-                    >
-                        Большинство родителей застревают на первом уровне.<br/>
-                        Я работаю со всеми четырьмя.
-                    </Typography>
+                    <Divider sx={{
+                        width: '80px',
+                        height: '2px',
+                        backgroundColor: '#D95D2B',
+                        mx: 'auto'
+                    }} />
                 </Box>
 
-                {/* Уровни системы */}
-                <Grid container spacing={3}>
-                    {systemLevels.map((level) => (
-                        <Grid item xs={12} md={6} lg={3} key={level.level}>
-                            <Paper elevation={0} sx={{
-                                p: 3,
-                                height: '100%',
-                                border: '1px solid #e0e0e0',
-                                backgroundColor: '#fff',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                position: 'relative',
-                                '&:hover': {
-                                    borderColor: '#000',
-                                    boxShadow: '0 8px 24px rgba(0,0,0,0.08)'
-                                }
-                            }}>
-                                {/* Номер уровня */}
-                                <Box sx={{
-                                    position: 'absolute',
-                                    top: -20,
-                                    left: 20,
-                                    width: 40,
-                                    height: 40,
-                                    borderRadius: '50%',
-                                    backgroundColor: '#000',
-                                    color: '#fff',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: 18,
-                                    fontWeight: 600
-                                }}>
-                                    {level.level}
-                                </Box>
+                {/* Вступление */}
+                <Paper
+                    elevation={0}
+                    sx={{
+                        backgroundColor: 'transparent',
+                        p: 0,
+                        mb: 8,
+                        maxWidth: '800px',
+                        mx: 'auto'
+                    }}
+                >
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            fontSize: { xs: '1.1rem', md: '1.2rem' },
+                            color: '#3E2F28', // Bitter Chocolate
+                            lineHeight: 1.7,
+                            mb: 4,
+                            textAlign: 'center'
+                        }}
+                    >
+                        Я не верю в «идеальное родительство». Идеал статичен, а жизнь — это движение. Я работаю с теми,
+                        кто готов быть не идеальным, а опорным.
+                    </Typography>
 
-                                {/* Иконка и заголовок */}
-                                <Box sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    mb: 2,
-                                    mt: 2
-                                }}>
-                                    <Box sx={{
-                                        mr: 2,
-                                        color: '#000'
-                                    }}>
-                                        {level.icon}
-                                    </Box>
-                                    <Box>
-                                        <Typography
-                                            component="h3"
-                                            sx={{
-                                                fontSize: 18,
-                                                fontWeight: 600,
-                                                textTransform: 'uppercase',
-                                                lineHeight: 1.2
-                                            }}
-                                        >
-                                            {level.title}
-                                        </Typography>
-                                        <Typography
-                                            sx={{
-                                                fontSize: 13,
-                                                color: '#666',
-                                                fontStyle: 'italic'
-                                            }}
-                                        >
-                                            {level.subtitle}
-                                        </Typography>
-                                    </Box>
-                                </Box>
+                    <Paper
+                        elevation={0}
+                        sx={{
+                            backgroundColor: 'rgba(166, 124, 82, 0.05)',
+                            borderRadius: 2,
+                            p: 4,
+                            borderLeft: '4px solid #D95D2B',
+                            textAlign: 'center'
+                        }}
+                    >
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                fontSize: '1.1rem',
+                                color: '#3E2F28',
+                                lineHeight: 1.7,
+                                fontStyle: 'italic'
+                            }}
+                        >
+                            Этот манифест — мой способ сонастройки. Пожалуйста, прочтите его прежде,
+                            чем доверить мне стратегию вашей семьи.
+                        </Typography>
+                    </Paper>
+                </Paper>
 
-                                {/* Пункты */}
-                                <List dense sx={{ mb: 2, flexGrow: 1 }}>
-                                    {level.items.map((item, index) => (
-                                        <ListItem
-                                            key={index}
-                                            sx={{
-                                                py: 0.5,
-                                                px: 0
-                                            }}
-                                        >
-                                            <ListItemIcon sx={{ minWidth: 28 }}>
-                                                <Box sx={{
-                                                    width: 6,
-                                                    height: 6,
-                                                    borderRadius: '50%',
-                                                    backgroundColor: '#000'
-                                                }} />
-                                            </ListItemIcon>
-                                            <ListItemText
-                                                primary={item}
-                                                primaryTypographyProps={{
-                                                    fontSize: 14,
-                                                    lineHeight: 1.4,
-                                                    color: '#444'
+                {/* С чем я не работаю */}
+                <Box sx={{ mb: 10 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box sx={{
+                            width: 40,
+                            height: 40,
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(166, 124, 82, 0.1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 2
+                        }}>
+                            <CancelIcon sx={{ color: '#A67C52', fontSize: 24 }} />
+                        </Box>
+                        <Typography
+                            variant="h2"
+                            sx={{
+                                fontSize: { xs: '1.5rem', md: '2rem' },
+                                fontWeight: 400,
+                                color: '#3E2F28'
+                            }}
+                        >
+                            С чем я не работаю (Принципы избирательности)
+                        </Typography>
+                    </Box>
+
+                    <Paper
+                        elevation={0}
+                        sx={{
+                            backgroundColor: 'rgba(166, 124, 82, 0.03)',
+                            borderRadius: 2,
+                            p: 4,
+                            border: '1px solid rgba(166, 124, 82, 0.1)',
+                            mb: 4
+                        }}
+                    >
+                        <Typography
+                            sx={{
+                                color: '#A67C52',
+                                fontSize: '1rem',
+                                lineHeight: 1.6,
+                                mb: 3,
+                                fontStyle: 'italic'
+                            }}
+                        >
+                            Я дорожу результатом каждой семьи, поэтому вхожу в проект только тогда,
+                            когда мы совпадаем в базе. Нам не по пути, если:
+                        </Typography>
+
+                        <List sx={{ p: 0 }}>
+                            {notWorkingWith.map((item, index) => (
+                                <ListItem
+                                    key={index}
+                                    disablePadding
+                                    sx={{
+                                        mb: 2,
+                                        alignItems: 'flex-start'
+                                    }}
+                                >
+                                    <ListItemIcon sx={{ minWidth: 40, mt: 0.5 }}>
+                                        <Box sx={{ color: '#A67C52' }}>
+                                            {item.icon}
+                                        </Box>
+                                    </ListItemIcon>
+                                    <ListItemText
+                                        primary={item.text}
+                                        primaryTypographyProps={{
+                                            fontSize: '1rem',
+                                            color: '#3E2F28',
+                                            lineHeight: 1.6
+                                        }}
+                                    />
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Paper>
+                </Box>
+
+                {/* Фундамент моей веры */}
+                <Box sx={{ mb: 10 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box sx={{
+                            width: 40,
+                            height: 40,
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(217, 93, 43, 0.1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 2
+                        }}>
+                            <CheckCircleIcon sx={{ color: '#D95D2B', fontSize: 24 }} />
+                        </Box>
+                        <Typography
+                            variant="h2"
+                            sx={{
+                                fontSize: { xs: '1.5rem', md: '2rem' },
+                                fontWeight: 400,
+                                color: '#3E2F28'
+                            }}
+                        >
+                            Фундамент моей веры (Принципы созидания)
+                        </Typography>
+                    </Box>
+
+                    <Grid container spacing={3}>
+                        {foundationPrinciples.map((item, index) => (
+                            <Grid item xs={12} md={6} key={index}>
+                                <Paper
+                                    elevation={0}
+                                    sx={{
+                                        height: '100%',
+                                        backgroundColor: 'rgba(217, 93, 43, 0.03)',
+                                        borderRadius: 2,
+                                        p: 3,
+                                        border: '1px solid rgba(217, 93, 43, 0.1)',
+                                        transition: 'transform 0.3s ease',
+                                        '&:hover': {
+                                            transform: 'translateY(-4px)'
+                                        }
+                                    }}
+                                >
+                                    <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                                        <Box sx={{
+                                            color: '#D95D2B',
+                                            mr: 2,
+                                            mt: 0.5
+                                        }}>
+                                            {item.icon}
+                                        </Box>
+                                        <Box>
+                                            <Typography
+                                                variant="h6"
+                                                sx={{
+                                                    fontWeight: 500,
+                                                    color: '#3E2F28',
+                                                    fontSize: '1.1rem',
+                                                    mb: 1
                                                 }}
-                                            />
-                                        </ListItem>
-                                    ))}
-                                </List>
-
-                                {/* Трансформация родителя (если есть) */}
-                                {level.parentTransform && (
-                                    <Box sx={{
-                                        mt: 2,
-                                        pt: 2,
-                                        borderTop: '1px dashed #e0e0e0'
-                                    }}>
-                                        <Typography
-                                            sx={{
-                                                fontSize: 13,
-                                                lineHeight: 1.5,
-                                                color: '#666',
-                                                fontStyle: 'italic'
-                                            }}
-                                        >
-                                            {level.parentTransform}
-                                        </Typography>
+                                            >
+                                                {item.title}
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    color: '#3E2F28',
+                                                    fontSize: '0.95rem',
+                                                    lineHeight: 1.6
+                                                }}
+                                            >
+                                                {item.text}
+                                            </Typography>
+                                        </Box>
                                     </Box>
-                                )}
-                            </Paper>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
+                                </Paper>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
 
-            {/* Зачем веду блог */}
-            <Paper elevation={0} sx={{
-                p: { xs: 4, md: 6 },
-                border: '1px solid #000',
-                backgroundColor: '#000',
-                color: '#fff',
-                textAlign: 'center'
-            }}>
-                <Typography
-                    component="h3"
+                {/* Архитектура развития */}
+                <Box sx={{ mb: 10 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box sx={{
+                            width: 40,
+                            height: 40,
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(166, 124, 82, 0.1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 2
+                        }}>
+                            <LayersIcon sx={{ color: '#A67C52', fontSize: 24 }} />
+                        </Box>
+                        <Typography
+                            variant="h2"
+                            sx={{
+                                fontSize: { xs: '1.5rem', md: '2rem' },
+                                fontWeight: 400,
+                                color: '#3E2F28'
+                            }}
+                        >
+                            Архитектура развития: 4 уровня системы
+                        </Typography>
+                    </Box>
+
+                    <Paper
+                        elevation={0}
+                        sx={{
+                            backgroundColor: 'transparent',
+                            p: 0,
+                            mb: 3
+                        }}
+                    >
+                        <Typography
+                            sx={{
+                                color: '#A67C52',
+                                fontSize: '1rem',
+                                lineHeight: 1.6,
+                                mb: 4,
+                                textAlign: 'center',
+                                maxWidth: '800px',
+                                mx: 'auto'
+                            }}
+                        >
+                            Большинство подходов буксуют, пытаясь привить навыки (Level 1), игнорируя фундамент.
+                            Моя методика охватывает все уровни, которые невозможно перепрыгнуть:
+                        </Typography>
+                    </Paper>
+
+                    <Grid container spacing={3}>
+                        {architectureLevels.map((level) => (
+                            <Grid item xs={12} md={6} key={level.level}>
+                                <Paper
+                                    elevation={0}
+                                    sx={{
+                                        height: '100%',
+                                        backgroundColor: level.color,
+                                        borderRadius: 2,
+                                        p: 4,
+                                        border: '1px solid',
+                                        borderColor: level.level <= '2' ? 'rgba(166, 124, 82, 0.3)' : 'rgba(217, 93, 43, 0.3)',
+                                        position: 'relative',
+                                        overflow: 'hidden'
+                                    }}
+                                >
+                                    <Box sx={{
+                                        position: 'absolute',
+                                        top: 16,
+                                        right: 16,
+                                        width: 40,
+                                        height: 40,
+                                        borderRadius: '50%',
+                                        backgroundColor: level.level <= '2' ? '#A67C52' : '#D95D2B',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: '#FCF9F3',
+                                        fontSize: '1.2rem',
+                                        fontWeight: 700
+                                    }}>
+                                        {level.level}
+                                    </Box>
+
+                                    <Typography
+                                        variant="h3"
+                                        sx={{
+                                            fontWeight: 600,
+                                            color: '#3E2F28',
+                                            fontSize: '1.3rem',
+                                            mb: 1,
+                                            pr: 6
+                                        }}
+                                    >
+                                        {level.title}
+                                    </Typography>
+
+                                    <Typography
+                                        sx={{
+                                            color: level.level <= '2' ? '#A67C52' : '#D95D2B',
+                                            fontSize: '0.95rem',
+                                            fontWeight: 500,
+                                            mb: 2
+                                        }}
+                                    >
+                                        {level.subtitle}
+                                    </Typography>
+
+                                    <Typography
+                                        sx={{
+                                            color: '#3E2F28',
+                                            fontSize: '0.95rem',
+                                            lineHeight: 1.6
+                                        }}
+                                    >
+                                        {level.description}
+                                    </Typography>
+                                </Paper>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
+
+                {/* Моя миссия */}
+                <Paper
+                    elevation={0}
                     sx={{
-                        fontSize: { xs: 22, md: 26 },
-                        fontWeight: 600,
-                        mb: 3,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
+                        backgroundColor: 'rgba(217, 93, 43, 0.05)',
+                        borderRadius: 2,
+                        p: { xs: 4, md: 6 },
+                        borderLeft: '4px solid #D95D2B'
                     }}
                 >
-                    ЗАЧЕМ Я ВЕДУ БЛОГ
-                </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                        <Box sx={{
+                            width: 50,
+                            height: 50,
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(217, 93, 43, 0.1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 3
+                        }}>
+                            <TimelineIcon sx={{ color: '#D95D2B', fontSize: 28 }} />
+                        </Box>
+                        <Typography
+                            variant="h2"
+                            sx={{
+                                fontSize: { xs: '1.5rem', md: '2rem' },
+                                fontWeight: 400,
+                                color: '#3E2F28'
+                            }}
+                        >
+                            Моя миссия
+                        </Typography>
+                    </Box>
 
-                <Typography
-                    sx={{
-                        fontSize: { xs: 16, md: 18 },
-                        lineHeight: 1.7,
-                        mb: 4,
-                        maxWidth: 800,
-                        mx: 'auto'
-                    }}
-                >
-                    Это Школа Родительства уровня вуза. Я встраиваю систему формирования родителей,
-                    которая не ограничивается советами, а создаёт фундамент для многолетней осознанной практики.
-                </Typography>
+                    <Typography
+                        sx={{
+                            color: '#3E2F28',
+                            fontSize: { xs: '1.1rem', md: '1.2rem' },
+                            lineHeight: 1.7,
+                            mb: 3
+                        }}
+                    >
+                        Моя работа — это Школа Родительства уровня высшего образования. Я не даю советов «на завтрак».
+                        Я помогаю вам занять позицию, которая требует такого же глубокого изучения, как любая серьезная профессия.
+                    </Typography>
 
-                <Typography
-                    sx={{
-                        fontSize: 15,
-                        lineHeight: 1.6,
-                        color: '#ddd',
-                        fontStyle: 'italic',
-                        maxWidth: 600,
-                        mx: 'auto'
-                    }}
-                >
-                    Потому что быть родителем — это не роль, а позиция.
-                    И эта позиция требует такого же глубокого изучения, как любая серьёзная профессия.
-                </Typography>
-            </Paper>
-        </Container>
+                    <Box sx={{
+                        p: 3,
+                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        borderRadius: 1,
+                        border: '1px solid rgba(217, 93, 43, 0.2)',
+                        textAlign: 'center'
+                    }}>
+                        <Typography
+                            sx={{
+                                color: '#D95D2B',
+                                fontSize: { xs: '1.2rem', md: '1.4rem' },
+                                fontWeight: 500,
+                                fontStyle: 'italic',
+                                lineHeight: 1.4
+                            }}
+                        >
+                            Родительство — это не роль. Это ваша главная жизненная стратегия.
+                        </Typography>
+                    </Box>
+                </Paper>
+            </Container>
+        </Box>
     );
 }

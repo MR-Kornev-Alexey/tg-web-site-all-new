@@ -89,6 +89,9 @@ import MiniCourses from "../MiniCourses/MiniCourses";
 import OneToOneBlock from "../OneToOneBlock/OneToOneBlock";
 import TwoPathsBlock from "../TwoPathsBlock/TwoPathsBlock";
 import TwoWayMethodsBlock from "../OneToOneBlock/TwoWayMethodsBlock";
+import SecondScreen from "../SecondScreen/SecondScreen";
+import PremiumPartnership from "../PremiumPartnership/PremiumPartnership";
+import CompatibilityCriteria from "../CompatibilityCriteria/CompatibilityCriteria";
 
 
 const ScrollToTopButton = () => {
@@ -142,9 +145,12 @@ export default function Main() {
         <Box>
             {/*<Author/>*/}
             <FirstScreen/>
-            <OneToOneBlock/>
-            <TwoPathsBlock/>
-            <TwoWayMethodsBlock />
+            <SecondScreen />
+            <PremiumPartnership />
+            <CompatibilityCriteria/>
+            {/*<OneToOneBlock/>*/}
+            {/*<TwoPathsBlock/>*/}
+            {/*<TwoWayMethodsBlock />*/}
             {/*<LineBlock title={"Консультация"}/>*/}
             {/*<Consultation />*/}
             {/*<LineBlock title={"Персональное ведение"}/>*/}
@@ -160,11 +166,8 @@ export default function Main() {
             {/*<SixWeek/>*/}
             {/*<LineBlock title={"Как работаем ?"}/>*/}
             {/*<HowWork />*/}
-
-            <LineBlock title={"Отзывы"}/>
             <Slider imagesFrom={images}/>
             {/*<LineBlock title={"Программа курса"}/>*/}
-            <LineBlock title={"Остались вопросы?"}/>
             <CallUS/>
             {/*<LineBlock title={"Елена Корнева"}/>*/}
 

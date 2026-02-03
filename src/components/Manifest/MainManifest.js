@@ -74,6 +74,7 @@ import Consultation from "../Consultation/Consultation";
 import ListOfFreeCourses from "../ListOfCourses/ListOfFreeCourses";
 import MiniCourses from "../MiniCourses/MiniCourses";
 import DevelopmentPhilosophy from "./Manifest";
+import Manifesto from "./Manifest";
 
 
 
@@ -126,7 +127,7 @@ const ScrollToTopButton = () => {
 export default function MainManifest() {
     return (
         <Box>
-            <DevelopmentPhilosophy/>
+            <Manifesto/>
             <LineBlock title={"Вопросы?"}/>
             <CallUS/>
             <Footer/>
