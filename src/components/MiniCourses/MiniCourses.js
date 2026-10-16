@@ -1,18 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
-import ChildCareIcon from '@mui/icons-material/ChildCare';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import AdjustIcon from '@mui/icons-material/Adjust';
-import BrowserNotSupportedIcon from '@mui/icons-material/BrowserNotSupported';
-import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
-import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation';
 import Button from "@mui/material/Button";
 import "./Timeline.css"
 import AlertDialogSlide from "../Dialog/Dialog"
@@ -23,10 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import rb from "../../img/right-bottom.svg";
-import Link from "@mui/material/Link";
-import TelegramIcon from "@mui/icons-material/Telegram";
-import ListAltIcon from '@mui/icons-material/ListAlt';
-import Grid from "@mui/material/Grid";
+
 
 
 export default function MiniCourses() {
@@ -129,44 +113,7 @@ export default function MiniCourses() {
     <br/>Стоимость <strong>3 820</strong> рублей
   </div>
 </div>`,
-        },
-        {
-            index: 3,
-            linkToTilda: 'https://t.me/energy_korneva_bot',
-            title: '20 техник мгновенного восстановления',
-            subTitle: '<div>"Просто отдохни" – <strong>не спасет!</strong></div>',
-            img: require("../../img/emo-cards/emo-img-3.png"),
-            description: `<div class="burnout-solution">
-  <p>Выгорание, усталость, нехватка сил – все это не решается обычным отдыхом. Ваш организм работает так, чтобы вы максимально концентрировались на ребенке и минимально – на себе.</p>
-
-  <p>🔹 <strong>Что с этим делать?</strong> Освободить энергию, вернуть ресурс и эмоциональную устойчивость с помощью 20+ проверенных техник мгновенного восстановления. Это не просто расслабление, а работа с причиной усталости, которая даст моментальный эффект.</p>
- <br/>
-  <div class="course-features">
-    <p>🔹 <strong>В КУРСЕ ВЫ НАЙДЕТЕ:</strong></p>
-    <ul>
-      <li>✅ <strong>Техники экстренной помощи себе</strong>, которые можно применять здесь и сейчас.</li>
-      <li>✅ <strong>Быстрые методики восстановления</strong>, не требующие сложных практик и лишнего времени.</li>
-      <li>✅ <strong>Инструменты</strong>, влияющие на физиологические процессы, чтобы энергия появлялась сама по себе.</li>
-    </ul>
-  </div>
- <br/>
-  <div class="results-section">
-    <p>🔹 <strong>ВАШ РЕЗУЛЬТАТ:</strong></p>
-    <ul>
-      <li>✔️ Вы станете более энергичной и ресурсной.</li>
-      <li>✔️ Настроение стабилизируется, а эмоции перестанут «качать» из стороны в сторону.</li>
-      <li>✔️ Быт и рутина перестанут загонять вас в выгорание.</li>
-      <li>✔️ Вы легче переживаете стрессы и сохраняете спокойствие в любых ситуациях.</li>
-      <li>✔️ Материнство больше не кажется марафоном без финиша – у вас появится ощущение легкости и вдохновения.</li>
-    </ul>
-  </div>
- <br/>
-  <div class="expert-credential">
-    <p>💥 <strong>Эти техники работают!</strong> Я – врач-педиатр, семейный психолог и эксперт по работе мозга, и в курс вошли только самые эффективные методики, которые дают реальный результат.</p>
-  </div>
-  <br/>Стоимость <strong>3 830</strong> рублей
-</div>`
-        },
+        }
     ]
     const [dialogOpen, setDialogOpen] = useState(false);
     const [dialogText, setDialogText] = useState('');

@@ -12,8 +12,8 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 export default function CallUS({
                                    title = "Остались вопросы?",
-                                   subtitle = "Получите персональную консультацию", // Исправлено: default значение
-                                   description = "Отправьте сообщение в Telegram, и мы свяжемся с вами в течение 24 часов для предварительной беседы.",
+                                   subtitle = "", // Исправлено: default значение
+                                   description = "Отправьте сообщение в Telegram, и мы свяжемся с вами в течение 8 часов",
                                    buttonText = "Связаться в Telegram",
                                    telegramLink = "https://t.me/MrkDigital?text=запрос на первичную консультацию",
                                    variant = "default" // 'default' или 'minimal'
@@ -160,7 +160,7 @@ export default function CallUS({
                                         fontSize: '0.9rem'
                                     }}
                                 >
-                                    Ответ в течение 24 часов
+                                    Ответ в течение 8 часов
                                 </Typography>
                             </Box>
 

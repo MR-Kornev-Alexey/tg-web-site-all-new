@@ -125,9 +125,9 @@ const ScrollToTopButton = () => {
 export default function MainCourses() {
     return (
         <Box>
+            {/*<LineBlock title={"Курсы"}/>*/}
             <LineBlock title={"Курсы"}/>
             <ListOfCourses/>
-            <LineBlock title={"Мини курсы"}/>
             <MiniCourses/>
             <LineBlock title={"Отзывы"}/>
             <Slider imagesFrom={images}/>

@@ -28,7 +28,7 @@ import {
     mdiFileDocument,
     mdiAccountLock,
     mdiGavel,
-    mdiClipboardCheck,
+    mdiClipboardCheck, mdiRocketOutline,
 } from "@mdi/js";
 import { Link, Typography } from "@mui/material";
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -153,13 +153,6 @@ export default function DrawerLeft() {
             icon: <Icon path={mdiListBoxOutline} size={1} />,
             link: "/course",
             color: "#A67C52", // Saddle Tan
-        },
-        {
-            id: 4,
-            title: "Мини-курсы",
-            icon: <Icon path={mdiNoteMultipleOutline} size={1} />,
-            link: "/mini-course",
-            color: "#3E2F28", // Bitter Chocolate
         },
         {
             id: 5,

@@ -124,11 +124,8 @@ const ScrollToTopButton = () => {
 export default function MainConsultation() {
     return (
         <Box>
-            <LineBlock title={"Консультация"}/>
             <Consultation/>
-            <LineBlock title={"Отзывы"}/>
             <Slider imagesFrom={images}/>
-            <LineBlock title={"Вопросы?"}/>
             <CallUS/>
             <Footer/>
             <ScrollToTopButton/>

@@ -62,18 +62,13 @@ const footers = [
             },
             {
                 id: 1,
-                text: 'Ведение',
+                text: 'Персональное ведение',
                 link: '/conduct'
             },
             {
                 id: 2,
                 text: 'Курсы',
                 link: '/course'
-            },
-            {
-                id: 3,
-                text: 'Мини-курсы',
-                link: '/mini-course'
             },
         ],
     },
@@ -90,7 +85,7 @@ function Copyright() {
                     display: 'block'
                 }}
             >
-                © {new Date().getFullYear()} Элита с пеленок
+                © {new Date().getFullYear()} Елена Корнева
             </Typography>
             <Typography
                 variant="caption"
@@ -205,19 +200,6 @@ export default function Footer() {
                         }}
                     >
                         Экспертное сопровождение семей с 2015 года
-                    </Typography>
-                    <Typography
-                        sx={{
-                            color: '#A67C52',
-                            fontSize: '0.85rem',
-                            lineHeight: 1.5,
-                            maxWidth: '600px',
-                            mx: 'auto',
-                            fontStyle: 'italic'
-                        }}
-                    >
-                        Специализация: нейрофизиологическое развитие детей от 0 до 7 лет,
-                        системный подход к воспитанию, семейная психология
                     </Typography>
                 </Box>
 

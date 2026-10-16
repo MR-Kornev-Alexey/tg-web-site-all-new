@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import '../main/Main.css'
-import LineBlock from "../SecondScreen/LineBlock"
-import Slider from "../Sliders/Sliders";
-import ListOfCourses from "../ListOfCourses/ListOfCourses"
 import {Box} from "@mui/system";
 
 const images = [
@@ -128,7 +125,6 @@ export default function MainManifest() {
     return (
         <Box>
             <Manifesto/>
-            <LineBlock title={"Вопросы?"}/>
             <CallUS/>
             <Footer/>
             <ScrollToTopButton/>

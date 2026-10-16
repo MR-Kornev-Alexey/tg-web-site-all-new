@@ -92,13 +92,19 @@ import TwoWayMethodsBlock from "../OneToOneBlock/TwoWayMethodsBlock";
 import SecondScreen from "../SecondScreen/SecondScreen";
 import PremiumPartnership from "../PremiumPartnership/PremiumPartnership";
 import CompatibilityCriteria from "../CompatibilityCriteria/CompatibilityCriteria";
+import SecondScreenNew from "../SecondScreen/EditSecondScreen";
+import FirstScreenVideo from "./FirstScreenVideo";
+import ThreePowers from "../ThreePowers/ThreePowers";
+import MethodologyContrast from "../MethodologyContrast/MethodologyContrast";
+import MethodologySlide from "../MethodologySlide/MethodologySlide";
+import EliteDefinitionSlide from "../EliteDefinitionSlide/EliteDefinitionSlide";
+import ThreePowersSystem from "../ThreePowersSystem/ThreePowersSystem";
 
 
 const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const handleScroll = () => {
-        // Определите, насколько экранов нужно прокрутить, чтобы кнопка стала видимой
         const scrollThreshold = window.innerHeight * 1.5;
 
         if (window.scrollY > scrollThreshold) {
@@ -117,8 +123,6 @@ const ScrollToTopButton = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-
-        // Очистка слушателя событий при размонтировании компонента
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -140,14 +144,22 @@ const ScrollToTopButton = () => {
     );
 };
 
-export default function Main() {
+export default function nhfyMain() {
     return (
         <Box>
-            {/*<Author/>*/}
-            <FirstScreen/>
-            <SecondScreen />
-            <PremiumPartnership />
-            <CompatibilityCriteria/>
+
+            {/*<FirstScreen />*/}
+            <FirstScreenVideo />
+            {/*<ThreePowers />*/}
+            <ThreePowersSystem />
+            <Author/>
+            {/*<MethodologySlide />*/}
+            {/*<EliteDefinitionSlide />*/}
+            {/*<FirstScreen/>*/}
+
+            {/*<SecondScreenNew />*/}
+            {/*<PremiumPartnership />*/}
+            {/*<CompatibilityCriteria/>*/}
             {/*<OneToOneBlock/>*/}
             {/*<TwoPathsBlock/>*/}
             {/*<TwoWayMethodsBlock />*/}

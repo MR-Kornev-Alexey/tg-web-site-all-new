@@ -92,7 +92,7 @@ export default function SecondScreenNew() {
                     <Typography
                         variant="h1"
                         sx={{
-                            fontSize: { xs: '2.5rem', md: '3.5rem' },
+                            fontSize: { xs: '1.5rem', md: '2.5rem' },
                             fontWeight: 300,
                             color: '#3E2F28', // Bitter Chocolate
                             mb: 3,
@@ -100,7 +100,8 @@ export default function SecondScreenNew() {
                             letterSpacing: '-0.5px'
                         }}
                     >
-                        Интуиция — плохой навигатор в шторм
+                        Любить ребенка — это интуитивно<br/>
+                        Но понимать, что происходит в его голове, когда он закрывается или протестует — это уже навык
                     </Typography>
 
                     <Typography
@@ -115,7 +116,7 @@ export default function SecondScreenNew() {
                             fontStyle: 'italic'
                         }}
                     >
-                        Большинство родителей действуют «по наитию», превращая воспитание в бесконечный экспромт.
+                        Мы часто действуем на ощупь, просто потому что нас самих так растили. Но когда старые методы не срабатывают, мы начинаем тревожиться. Я здесь для того, чтобы заменить эту тревогу на спокойную уверенность. Мой опыт врача и мамы — это не список правил, а ваша опора.
                     </Typography>
                 </Box>
 

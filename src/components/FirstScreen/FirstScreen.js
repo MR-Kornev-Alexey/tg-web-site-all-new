@@ -12,7 +12,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 export default function FirstScreen() {
-    const theme = useTheme(); // Добавлен хук useTheme
+    const theme = useTheme();
 
     return (
         <Box sx={{
@@ -31,7 +31,7 @@ export default function FirstScreen() {
                 height: '400px',
                 background: 'radial-gradient(circle, rgba(217,93,43,0.05) 0%, transparent 70%)',
                 zIndex: 0,
-                [theme.breakpoints.down('md')]: { // Теперь theme доступна
+                [theme.breakpoints.down('md')]: {
                     display: 'none'
                 }
             }} />
@@ -49,7 +49,7 @@ export default function FirstScreen() {
                             justifyContent: 'center',
                         }}
                     >
-                        {/* Заголовок */}
+                        {/* ЗАГОЛОВОК */}
                         <Typography
                             component="h1"
                             sx={{
@@ -61,18 +61,18 @@ export default function FirstScreen() {
                                 letterSpacing: '-0.5px'
                             }}
                         >
-                            Я не решаю сиюминутные проблемы
+                            "Элита с пелёнок"<br/>Как вырастить живой ум,
                             <Box component="span" sx={{
                                 display: 'block',
                                 fontWeight: 400,
                                 color: '#D95D2B', // Signature Orange
                                 mt: 1
                             }}>
-                                Я формирую будущее ребёнка
+                                который будет сильнее любого алгоритма
                             </Box>
                         </Typography>
 
-                        {/* Подзаголовок */}
+                        {/* ПОДЗАГОЛОВОК */}
                         <Typography
                             component="h2"
                             sx={{
@@ -84,109 +84,128 @@ export default function FirstScreen() {
                                 maxWidth: '90%'
                             }}
                         >
-                            Большинство ошибок воспитания становятся заметными, когда поведение уже закрепилось<br/>
-                            Я сопровождаю семьи в точках, где цена ошибки — годы исправлений.
+                            Пока одни тупеют в телефонах — мы растим тех, кто будет ими управлять. Опыт врача , психолога и нейробиология для мощного жизненного старта.
+                            Честная методика воспитания в мире, где технологии опережают человека
                         </Typography>
 
-                        {/* КНОПКИ */}
+                        {/* КНОПКИ CTA - ОБНОВЛЕНЫ */}
                         <Box
                             sx={{
                                 display: 'flex',
                                 flexDirection: { xs: 'column', sm: 'row' },
-                                gap: 3,
-                                mb: 5,
+                                gap: 4,
+                                mb: 2,
                                 flexWrap: 'wrap'
                             }}
                         >
-                            {/* Кнопка 1 - Акцентная */}
-                            <Link
-                                href="https://t.me/MrkDigital?text=запрос на стратегическую сессию"
-                                target="_blank"
-                                underline="none"
-                                sx={{
-                                    height: 56,
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: 2,
-                                    backgroundColor: 'transparent',
-                                    color: '#3E2F28', // Bitter Chocolate
-                                    fontSize: '0.95rem',
-                                    fontWeight: 500,
-                                    letterSpacing: '0.02em',
-                                    transition: 'all 0.3s ease',
-                                    borderRadius: '50px',
-                                    px: 4,
-                                    minWidth: { sm: 220 },
-                                    textTransform: 'none',
-                                    border: '1px solid #A67C52', // Saddle Tan
-                                    '&:hover': {
-                                        backgroundColor: 'rgba(166, 124, 82, 0.05)',
-                                        borderColor: '#D95D2B', // Signature Orange
-                                        transform: 'translateY(-2px)'
-                                    }
-                                }}
-                            >
-                                <TelegramIcon sx={{ fontSize: 20 }} />
-                                Решить критическую задачу
-                                <ArrowForwardIcon sx={{ fontSize: 18, ml: 1 }} />
-                            </Link>
-
-                            {/* Кнопка 2 */}
-                            <Link
-                                href="https://t.me/MrkDigital?text=запрос на персональное сопровождение"
-                                target="_blank"
-                                underline="none"
-                                sx={{
-                                    height: 56,
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: 2,
-                                    backgroundColor: 'transparent',
-                                    color: '#3E2F28', // Bitter Chocolate
-                                    fontSize: '0.95rem',
-                                    fontWeight: 500,
-                                    letterSpacing: '0.02em',
-                                    transition: 'all 0.3s ease',
-                                    borderRadius: '50px',
-                                    px: 4,
-                                    minWidth: { sm: 220 },
-                                    textTransform: 'none',
-                                    border: '1px solid #A67C52', // Saddle Tan
-                                    '&:hover': {
-                                        backgroundColor: 'rgba(166, 124, 82, 0.05)',
-                                        borderColor: '#D95D2B', // Signature Orange
-                                        transform: 'translateY(-2px)'
-                                    }
-                                }}
-                            >
-                                <TelegramIcon sx={{ fontSize: 20 }} />
-                                Подать заявку на личное ведение
-                            </Link>
-                        </Box>
-
-                        {/* Подпись под кнопками */}
-                        <Typography
-                            component="p"
-                            sx={{
-                                fontSize: '0.9rem',
-                                lineHeight: 1.5,
-                                color: '#A67C52', // Saddle Tan
-                                fontStyle: 'italic',
-                                maxWidth: '400px'
-                            }}
-                        >
-                            Личное ведение | Ограниченный круг семей
-                            <Box component="span" sx={{ display: 'block', mt: 0.5 }}>
-                                Работа там, где второго шанса не будет
+                            {/* Левая кнопка - Консультация */}
+                            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                                <Link
+                                    href="https://t.me/MrkDigital?text=запрос на консультацию: найти точки роста ребенка"
+                                    target="_blank"
+                                    underline="none"
+                                    sx={{
+                                        height: 56,
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: 2,
+                                        backgroundColor: 'transparent',
+                                        color: '#3E2F28',
+                                        border: '2px solid #D95D2B',
+                                        fontSize: '0.95rem',
+                                        fontWeight: 600,
+                                        letterSpacing: '0.02em',
+                                        transition: 'all 0.3s ease',
+                                        borderRadius: '50px',
+                                        px: 4,
+                                        minWidth: { sm: 240 },
+                                        textTransform: 'none',
+                                        boxShadow: '0 4px 12px rgba(217, 93, 43, 0.25)',
+                                        '&:hover': {
+                                            backgroundColor: 'rgba(217, 93, 43, 0.05)',
+                                            borderColor: '#C04E26',
+                                            transform: 'translateY(-2px)',
+                                            boxShadow: '0 8px 20px rgba(217, 93, 43, 0.15)'
+                                        }
+                                    }}
+                                >
+                                    <TelegramIcon sx={{ fontSize: 20 }} />
+                                    Персональная консультация
+                                    <ArrowForwardIcon sx={{ fontSize: 18, ml: 1 }} />
+                                </Link>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        fontSize: '0.8rem',
+                                        lineHeight: 1.4,
+                                        color: '#A67C52',
+                                        fontStyle: 'italic',
+                                        mt: 1,
+                                        ml: 2,
+                                        maxWidth: '240px'
+                                    }}
+                                >
+                                    Разбор вашей ситуации
+                                </Typography>
                             </Box>
-                        </Typography>
+
+                            {/* Правая кнопка - Ведение */}
+                            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                                <Link
+                                    href="https://t.me/MrkDigital?text=запрос на личное ведение"
+                                    target="_blank"
+                                    underline="none"
+                                    sx={{
+                                        height: 56,
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: 2,
+                                        backgroundColor: 'transparent',
+                                        color: '#3E2F28',
+                                        border: '2px solid #D95D2B',
+                                        fontSize: '0.95rem',
+                                        fontWeight: 600,
+                                        letterSpacing: '0.02em',
+                                        transition: 'all 0.3s ease',
+                                        borderRadius: '50px',
+                                        px: 4,
+                                        minWidth: { sm: 240 },
+                                        textTransform: 'none',
+                                        '&:hover': {
+                                            backgroundColor: 'rgba(217, 93, 43, 0.05)',
+                                            borderColor: '#C04E26',
+                                            transform: 'translateY(-2px)',
+                                            boxShadow: '0 8px 20px rgba(217, 93, 43, 0.15)'
+                                        }
+                                    }}
+                                >
+                                    <TelegramIcon sx={{ fontSize: 20, color: '#D95D2B' }} />
+                                      Личное ведение
+                                    <ArrowForwardIcon sx={{ fontSize: 18, ml: 1, color: '#D95D2B' }} />
+                                </Link>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        fontSize: '0.8rem',
+                                        lineHeight: 1.4,
+                                        color: '#A67C52',
+                                        fontStyle: 'italic',
+                                        mt: 1,
+                                        ml: 2,
+                                        maxWidth: '240px'
+                                    }}
+                                >
+                                    Ограниченный круг семей. Работа до результата.
+                                </Typography>
+                            </Box>
+                        </Box>
 
                         {/* Разделитель */}
                         <Divider sx={{
                             my: 6,
-                            borderColor: 'rgba(166, 124, 82, 0.2)', // Saddle Tan с прозрачностью
+                            borderColor: 'rgba(166, 124, 82, 0.2)',
                             width: '100px'
                         }} />
 
@@ -197,7 +216,7 @@ export default function FirstScreen() {
                                 sx={{
                                     fontSize: '1.1rem',
                                     fontWeight: 500,
-                                    color: '#3E2F28', // Bitter Chocolate
+                                    color: '#3E2F28',
                                     mb: 3,
                                     textTransform: 'uppercase',
                                     letterSpacing: '1px'
@@ -213,7 +232,7 @@ export default function FirstScreen() {
                                             sx={{
                                                 fontSize: '2.5rem',
                                                 fontWeight: 300,
-                                                color: '#D95D2B', // Signature Orange
+                                                color: '#D95D2B',
                                                 lineHeight: 1
                                             }}
                                         >
@@ -222,7 +241,7 @@ export default function FirstScreen() {
                                         <Typography
                                             sx={{
                                                 fontSize: '0.85rem',
-                                                color: '#A67C52', // Saddle Tan
+                                                color: '#A67C52',
                                                 mt: 1
                                             }}
                                         >
@@ -236,7 +255,7 @@ export default function FirstScreen() {
                                             sx={{
                                                 fontSize: '2.5rem',
                                                 fontWeight: 300,
-                                                color: '#D95D2B', // Signature Orange
+                                                color: '#D95D2B',
                                                 lineHeight: 1
                                             }}
                                         >
@@ -245,7 +264,7 @@ export default function FirstScreen() {
                                         <Typography
                                             sx={{
                                                 fontSize: '0.85rem',
-                                                color: '#A67C52', // Saddle Tan
+                                                color: '#A67C52',
                                                 mt: 1
                                             }}
                                         >
@@ -259,7 +278,7 @@ export default function FirstScreen() {
                                             sx={{
                                                 fontSize: '2.5rem',
                                                 fontWeight: 300,
-                                                color: '#D95D2B', // Signature Orange
+                                                color: '#D95D2B',
                                                 lineHeight: 1
                                             }}
                                         >
@@ -268,7 +287,7 @@ export default function FirstScreen() {
                                         <Typography
                                             sx={{
                                                 fontSize: '0.85rem',
-                                                color: '#A67C52', // Saddle Tan
+                                                color: '#A67C52',
                                                 mt: 1
                                             }}
                                         >
@@ -301,8 +320,6 @@ export default function FirstScreen() {
                                 right: -20,
                                 width: '100%',
                                 height: '100%',
-                                border: '1px solid #A67C52', // Saddle Tan
-                                borderRadius: '2px',
                                 zIndex: -1
                             }
                         }}>
@@ -353,7 +370,7 @@ export default function FirstScreen() {
                                 backgroundColor: 'transparent',
                                 borderRadius: 2,
                                 p: 4,
-                                border: '1px solid #A67C52', // Saddle Tan
+                                border: '1px solid #A67C52',
                                 position: 'relative',
                                 '&::before': {
                                     content: '""',
@@ -362,7 +379,7 @@ export default function FirstScreen() {
                                     left: -1,
                                     right: -1,
                                     height: '3px',
-                                    backgroundColor: '#D95D2B', // Signature Orange
+                                    backgroundColor: '#D95D2B',
                                     borderTopLeftRadius: '2px',
                                     borderTopRightRadius: '2px'
                                 }
@@ -373,7 +390,7 @@ export default function FirstScreen() {
                                 sx={{
                                     fontSize: '1.2rem',
                                     fontWeight: 500,
-                                    color: '#3E2F28', // Bitter Chocolate
+                                    color: '#3E2F28',
                                     mb: 3,
                                     textAlign: 'center'
                                 }}
@@ -389,8 +406,8 @@ export default function FirstScreen() {
                                 {[
                                     { text: "Врач-педиатр + семейный психолог" },
                                     { text: "Сертифицированный нейроспециалист (MIT)" },
-                                    { text: "Создатель методики 'Элитное развитие с пелёнок'" },
-                                    { text: "Бизнес-подход (MBA) к развитию ребёнка" },
+                                    { text: "Создатель методики 'Элита с пелёнок'" },
+                                    { text: "Готовится к изданию книга о современных методах воспитания ребенка", highlight: true },
                                     { text: "Мама 3 сыновей, бабушка 2 внуков" }
                                 ].map((item, index) => (
                                     <Box
@@ -404,7 +421,7 @@ export default function FirstScreen() {
                                         <CheckCircleOutlineIcon
                                             sx={{
                                                 fontSize: 18,
-                                                color: '#A67C52', // Saddle Tan
+                                                color: '#A67C52',
                                                 flexShrink: 0,
                                                 mt: 0.25
                                             }}
@@ -413,7 +430,7 @@ export default function FirstScreen() {
                                             sx={{
                                                 fontSize: '0.95rem',
                                                 lineHeight: 1.4,
-                                                color: '#3E2F28' // Bitter Chocolate
+                                                color: '#3E2F28'
                                             }}
                                         >
                                             {item.text}
