@@ -74,13 +74,7 @@ function App() {
                 navigate('/conduct');
                 break;
             case 4:
-                // Исправлено: используем window.location.href для перехода на внешний сайт
-                // Также исправлена опечатка в домене (запятая заменена на точку)
-                window.location.href = 'https://mrk.digital';
-
-                // АЛЬТЕРНАТИВА: Если вы хотите, чтобы сайт открывался в новой вкладке,
-                // закомментируйте строку выше и раскомментируйте строку ниже:
-                // window.open('https://mrk.digital', '_blank');
+                window.location.href = 'https://form.mrk.digital';
                 break;
             default:
                 break;
